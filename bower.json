@@ -1,0 +1,27 @@
+{
+  "name": "totalconsultores",
+  "description": "Website Total Consultores",
+  "main": "index.html",
+  "authors": [
+    "José Pérez <joseluis@watson.pe>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Website",
+    "Total Consultores"
+  ],
+  "moduleType": [],
+  "homepage": "http://watson.pe",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery-touchswipe": "^1.6.18"
+  }
+}

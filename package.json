@@ -1,0 +1,22 @@
+{
+  "name": "totalconsultores",
+  "version": "1.0.0",
+  "description": "Website Total Consultores",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-inject": "^4.2.0",
+    "gulp-livereload": "^3.8.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Total Consultores",
+    "Website"
+  ],
+  "author": "José Pérez <joseluis@watson.pe>",
+  "license": "MIT"
+}
