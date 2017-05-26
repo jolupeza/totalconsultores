@@ -1,0 +1,21 @@
+.Services {
+  @include display-flex();
+}
+.Services-item {
+  @include flex-basis(33.33%);
+  position: relative;
+}
+.Services-title {
+  position: absolute;
+  @include display-flex();
+  @include align-items(center);
+  height: 100%;
+  top: 0;
+  width: 100%;
+  h3 {
+    color: white;
+    @include flex-basis(100%);
+    font-size: 2.625em;
+    margin: 0;
+  }
+}

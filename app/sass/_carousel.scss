@@ -1,0 +1,36 @@
+.Carousel {
+  &--home {
+    .carousel-caption {
+      @include align-content(center);
+      @include display-flex();
+      @include flex-wrap(wrap);
+      bottom: auto;
+      height: 100%;
+      left: 10%;
+      padding: 0;
+      right: auto;
+      text-align: left;
+      @include text-shadow(none);
+      top: 0;
+      width: 40%;
+      h2, h3, h4 {
+        @include flex-basis(100%);
+      }
+      h3 {
+        font-size: 4.5em;
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+      h2 {
+        font-size: 5.375em;
+        font-weight: bold;
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+      h4 {
+        font-size: 1.25em;
+        margin-top: 0;
+      }
+    }
+  }
+}

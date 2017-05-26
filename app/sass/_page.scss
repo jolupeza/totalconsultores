@@ -1,0 +1,55 @@
+.Page {
+  padding: 80px 0;
+}
+.Page-title {
+  color: $black;
+  font-family: "Myriad-Pro-Bold";
+  font-size: 3em;
+  margin-top: 0;
+  margin-bottom: 15px;
+  &--white {
+    color: white;
+  }
+}
+.Page-subtitle {
+  color: $black;
+  font-family: "Myriad-Pro-Bold";
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+.Page-blog {
+  @include display-flex();
+  margin-top: 25px;
+}
+.Page-blog-item {
+  @include flex-basis(33.33%);
+  padding: 0 15px;
+}
+.Page-blog-figure {
+  margin-bottom: 15px;
+}
+.Page-blog-date {
+  color: gray;
+  font-size: 0.875em;
+  margin-top: 0;
+}
+.Page-blog-title {
+  font-family: "Myriad-Pro-Bold";
+  font-size: 1.5em;
+  a {
+    color: $black;
+    margin-top: 0;
+    &:hover {
+      color: $orange;
+      text-decoration: none;
+    }
+  }
+}
+.Page-blog-readmore {
+  color: $orange;
+  font-family: "Myriad-Pro-Bold";
+  &:hover {
+    color: $black;
+  }
+}

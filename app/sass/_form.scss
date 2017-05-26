@@ -1,0 +1,20 @@
+.Form {
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-control {
+    border: none;
+    @include border-radius(0);
+    color: $black;
+    font-size: 1em;
+    height: 42px;
+    @include input-placeholder {
+      color: $black;
+    }
+  }
+  textarea {
+    &.form-control {
+      height: 100px;
+    }
+  }
+}

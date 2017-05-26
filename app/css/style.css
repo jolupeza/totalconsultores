@@ -1,0 +1,367 @@
+body {
+  font-family: "Myriad-Pro";
+  font-size: 16px;
+}
+
+a {
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+a:hover {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: 'Myriad-Pro';
+  src: url("./../fonts/Myriad-Pro.eot");
+  src: url("./../fonts/Myriad-Pro.eot?#iefix") format("embedded-opentype"), url("./../fonts/Myriad-Pro.woff") format("woff"), url("./../fonts/Myriad-Pro.ttf") format("truetype"), url("./../fonts/Myriad-Pro.svg#Myriad-Pro") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Myriad-Pro-Bold';
+  src: url("./../fonts/Myriad-Pro-Bold.eot");
+  src: url("./../fonts/Myriad-Pro-Bold.eot?#iefix") format("embedded-opentype"), url("./../fonts/Myriad-Pro-Bold.woff") format("woff"), url("./../fonts/Myriad-Pro-Bold.ttf") format("truetype"), url("./../fonts/Myriad-Pro-Bold.svg#Myriad-Pro-Bold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.Header {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 15px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.Header-logo {
+  margin: 0;
+}
+
+.Header-menu {
+  display: -webkit-flex;
+  display: flex;
+  margin: 0;
+  padding-left: 0;
+  padding-top: 25px;
+}
+
+.MainMenu {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  width: 100%;
+}
+.MainMenu li {
+  padding: 0 20px;
+}
+.MainMenu li.active a {
+  border-bottom: 4px solid white;
+}
+.MainMenu li a {
+  color: white;
+  font-size: 1.125em;
+  padding-bottom: 5px;
+  text-align: center;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.MainMenu li a:hover {
+  border-bottom: 4px solid white;
+  text-decoration: none;
+}
+
+.Carousel--home .carousel-caption {
+  -webkit-align-content: center;
+  align-content: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  bottom: auto;
+  height: 100%;
+  left: 10%;
+  padding: 0;
+  right: auto;
+  text-align: left;
+  text-shadow: none;
+  top: 0;
+  width: 40%;
+}
+.Carousel--home .carousel-caption h2, .Carousel--home .carousel-caption h3, .Carousel--home .carousel-caption h4 {
+  -webkit-flex-basis: 100%;
+  flex-basis: 100%;
+}
+.Carousel--home .carousel-caption h3 {
+  font-size: 4.5em;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.Carousel--home .carousel-caption h2 {
+  font-size: 5.375em;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.Carousel--home .carousel-caption h4 {
+  font-size: 1.25em;
+  margin-top: 0;
+}
+
+.Button {
+  border: none;
+  display: inline-block;
+  font-size: 1.125em;
+  padding: 15px 35px;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.Button:hover {
+  text-decoration: none;
+}
+.Button--orange {
+  background-color: #ff6043;
+  color: white;
+}
+.Button--orange:hover {
+  background-color: white;
+  color: #ff6043;
+}
+
+.Services {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.Services-item {
+  -webkit-flex-basis: 33.33%;
+  flex-basis: 33.33%;
+  position: relative;
+}
+
+.Services-title {
+  position: absolute;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  height: 100%;
+  top: 0;
+  width: 100%;
+}
+.Services-title h3 {
+  color: white;
+  -webkit-flex-basis: 100%;
+  flex-basis: 100%;
+  font-size: 2.625em;
+  margin: 0;
+}
+
+.Page {
+  padding: 80px 0;
+}
+
+.Page-title {
+  color: #111015;
+  font-family: "Myriad-Pro-Bold";
+  font-size: 3em;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+.Page-title--white {
+  color: white;
+}
+
+.Page-subtitle {
+  color: #111015;
+  font-family: "Myriad-Pro-Bold";
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.Page-blog {
+  display: -webkit-flex;
+  display: flex;
+  margin-top: 25px;
+}
+
+.Page-blog-item {
+  -webkit-flex-basis: 33.33%;
+  flex-basis: 33.33%;
+  padding: 0 15px;
+}
+
+.Page-blog-figure {
+  margin-bottom: 15px;
+}
+
+.Page-blog-date {
+  color: gray;
+  font-size: 0.875em;
+  margin-top: 0;
+}
+
+.Page-blog-title {
+  font-family: "Myriad-Pro-Bold";
+  font-size: 1.5em;
+}
+.Page-blog-title a {
+  color: #111015;
+  margin-top: 0;
+}
+.Page-blog-title a:hover {
+  color: #ff6043;
+  text-decoration: none;
+}
+
+.Page-blog-readmore {
+  color: #ff6043;
+  font-family: "Myriad-Pro-Bold";
+}
+.Page-blog-readmore:hover {
+  color: #111015;
+}
+
+.Parallax {
+  position: relative;
+}
+
+.Parallax-caption {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-content: center;
+  align-content: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  height: 100%;
+  left: 10%;
+  position: absolute;
+  top: 0;
+  width: 60%;
+}
+
+.Parallax-title, .Parallax-subtitle {
+  color: white;
+  -webkit-flex-basis: 100%;
+  flex-basis: 100%;
+  margin: 0;
+}
+
+.Parallax-subtitle {
+  font-size: 3.5em;
+}
+
+.Parallax-title {
+  font-family: "Myriad-Pro-Bold";
+  font-size: 4em;
+}
+
+.Slogan {
+  background-color: #ff6043;
+  padding: 50px;
+}
+
+.Slogan-subtitle, .Slogan-title {
+  color: white;
+  margin: 0;
+}
+
+.Slogan-subtitle {
+  font-size: 3.5em;
+}
+
+.Slogan-title {
+  font-family: "Myriad-Pro-Bold";
+  font-size: 4em;
+}
+
+.Form .form-group {
+  margin-bottom: 20px;
+}
+.Form .form-control {
+  border: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  color: #111015;
+  font-size: 1em;
+  height: 42px;
+}
+.Form .form-control:-moz-placeholder {
+  color: #111015;
+}
+.Form .form-control::-moz-placeholder {
+  color: #111015;
+}
+.Form .form-control:-ms-input-placeholder {
+  color: #111015;
+}
+.Form .form-control::-webkit-input-placeholder {
+  color: #111015;
+}
+.Form textarea.form-control {
+  height: 100px;
+}
+
+.Contact {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.Contact-map, .Contact-form {
+  -webkit-flex-basis: 50%;
+  flex-basis: 50%;
+}
+
+.Contact-form {
+  background-color: #111015;
+  padding: 80px 12%;
+}
+.Contact-form .Form {
+  margin-top: 25px;
+}
+
+.Footer {
+  background-color: #111015;
+  padding: 50px 0;
+}
+
+.Footer-logo {
+  margin: 0 0 25px 0;
+}
+
+.Footer-text {
+  color: white;
+  font-size: 0.875em;
+  margin-bottom: 0;
+}
+
+.Footer-separator {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.Footer-social {
+  margin-bottom: 0;
+  margin-left: 0;
+}
+.Footer-social > .Footer-social-item {
+  font-size: 1.25em;
+  padding: 0 15px;
+}
+.Footer-social > .Footer-social-item a {
+  color: white;
+}
+.Footer-social > .Footer-social-item a:hover {
+  color: #ff6043;
+}

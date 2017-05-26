@@ -1,0 +1,13 @@
+.Contact {
+  @include display-flex();
+}
+.Contact-map, .Contact-form {
+  @include flex-basis(50%);
+}
+.Contact-form {
+  background-color: $black;
+  padding: 80px 12%;
+  .Form {
+    margin-top: 25px;
+  }
+}

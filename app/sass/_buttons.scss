@@ -1,0 +1,18 @@
+.Button {
+  border: none;
+  display: inline-block;
+  font-size: 1.125em;
+  padding: 15px 35px;
+  @include transition(all 0.2s ease);
+  &:hover {
+    text-decoration: none;
+  }
+  &--orange {
+    background-color: $orange;
+    color: white;
+    &:hover {
+      background-color: white;
+      color: $orange;
+    }
+  }
+}

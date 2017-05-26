@@ -1,0 +1,10 @@
+body {
+  font-family: "Myriad-Pro";
+  font-size: 16px;
+}
+a {
+  @include transition(all 0.2s ease);
+  &:hover {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,27 @@
+.MainMenu {
+  @include display-flex();
+  @include justify-content(flex-end);
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  width: 100%;
+  li {
+    padding: 0 20px;
+    &.active {
+      a {
+        border-bottom: 4px solid white;
+      }
+    }
+    a {
+      color: white;
+      font-size: 1.125em;
+      padding-bottom: 5px;
+      text-align: center;
+      @include transition(all 0.2s ease);
+      &:hover {
+        border-bottom: 4px solid white;
+        text-decoration: none;
+      }
+    }
+  }
+}

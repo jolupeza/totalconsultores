@@ -1,0 +1,17 @@
+.Header {
+  background-color: rgba(black, 0.6);
+  padding: 15px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+.Header-logo {
+  margin: 0;
+}
+.Header-menu {
+  @include display-flex();
+  margin: 0;
+  padding-left: 0;
+  padding-top: 25px;
+}

@@ -1,0 +1,25 @@
+.Parallax {
+  position: relative;
+}
+.Parallax-caption {
+  @include display-flex();
+  @include align-content(center);
+  @include flex-wrap(wrap);
+  height: 100%;
+  left: 10%;
+  position: absolute;
+  top: 0;
+  width: 60%;
+}
+.Parallax-title, .Parallax-subtitle {
+  color: white;
+  @include flex-basis(100%);
+  margin: 0;
+}
+.Parallax-subtitle {
+  font-size: 3.5em;
+}
+.Parallax-title {
+  font-family: "Myriad-Pro-Bold";
+  font-size: 4em;
+}
