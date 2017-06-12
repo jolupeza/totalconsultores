@@ -17,18 +17,19 @@
         @include flex-basis(100%);
       }
       h3 {
-        font-size: 4.5em;
+        font-family: "montserratlight";
+        font-size: 4em;
         margin-bottom: 0;
         margin-top: 0;
       }
       h2 {
-        font-size: 5.375em;
-        font-weight: bold;
+        font-family: "montserratsemibold";
+        font-size: 4.875em;
         margin-bottom: 0;
         margin-top: 0;
       }
       h4 {
-        font-size: 1.25em;
+        font-size: 1.125em;
         margin-top: 0;
       }
     }

@@ -3,7 +3,7 @@
 }
 .Page-title {
   color: $black;
-  font-family: "Myriad-Pro-Bold";
+  font-family: "montserratsemibold";
   font-size: 3em;
   margin-top: 0;
   margin-bottom: 15px;
@@ -13,8 +13,8 @@
 }
 .Page-subtitle {
   color: $black;
-  font-family: "Myriad-Pro-Bold";
-  font-size: 2em;
+  font-family: "montserratsemibold";
+  font-size: 1.5em;
   margin-top: 0;
   margin-bottom: 15px;
 }
@@ -25,17 +25,21 @@
 .Page-blog-item {
   @include flex-basis(33.33%);
   padding: 0 15px;
+  p {
+    font-family: "montserratlight";
+  }
 }
 .Page-blog-figure {
   margin-bottom: 15px;
 }
 .Page-blog-date {
   color: gray;
+  font-family: "montserratlight";
   font-size: 0.875em;
   margin-top: 0;
 }
 .Page-blog-title {
-  font-family: "Myriad-Pro-Bold";
+  font-family: "montserratmedium";
   font-size: 1.5em;
   a {
     color: $black;
@@ -47,9 +51,9 @@
   }
 }
 .Page-blog-readmore {
-  color: $orange;
-  font-family: "Myriad-Pro-Bold";
-  &:hover {
-    color: $black;
+  color: $red;
+  font-family: "montserratmedium";
+  &:hover, &:focus {
+    color: $orange;
   }
 }

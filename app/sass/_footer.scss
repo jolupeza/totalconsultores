@@ -1,5 +1,6 @@
 .Footer {
-  background-color: $black;
+  background: $black url('./../images/footer-bg.jpg') center center no-repeat;
+  background-size: cover;
   padding: 50px 0;
 }
 .Footer-logo {
@@ -7,6 +8,7 @@
 }
 .Footer-text {
   color: white;
+  font-family: "montserratlight";
   font-size: 0.875em;
   margin-bottom: 0;
 }

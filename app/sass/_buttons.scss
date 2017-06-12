@@ -1,16 +1,17 @@
 .Button {
   border: none;
   display: inline-block;
+  font-family: "montserratmedium";
   font-size: 1.125em;
   padding: 15px 35px;
   @include transition(all 0.2s ease);
-  &:hover {
+  &:hover, &:focus {
     text-decoration: none;
   }
   &--orange {
     background-color: $orange;
     color: white;
-    &:hover {
+    &:hover, &:focus {
       background-color: white;
       color: $orange;
     }

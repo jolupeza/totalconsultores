@@ -1,5 +1,7 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 body {
-  font-family: "Myriad-Pro";
+  color: #1f1f1f;
+  font-family: "montserratregular";
   font-size: 16px;
 }
 
@@ -14,16 +16,30 @@ a:hover {
 }
 
 @font-face {
-  font-family: 'Myriad-Pro';
-  src: url("./../fonts/Myriad-Pro.eot");
-  src: url("./../fonts/Myriad-Pro.eot?#iefix") format("embedded-opentype"), url("./../fonts/Myriad-Pro.woff") format("woff"), url("./../fonts/Myriad-Pro.ttf") format("truetype"), url("./../fonts/Myriad-Pro.svg#Myriad-Pro") format("svg");
+  font-family: 'montserratregular';
+  src: url("./../fonts/montserrat-regular.eot");
+  src: url("./../fonts/montserrat-regular.eot?#iefix") format("embedded-opentype"), url("./../fonts/montserrat-regular.woff2") format("woff2"), url("./../fonts/montserrat-regular.woff") format("woff"), url("./../fonts/montserrat-regular.ttf") format("truetype"), url("./../fonts/montserrat-regular.svg#montserratregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Myriad-Pro-Bold';
-  src: url("./../fonts/Myriad-Pro-Bold.eot");
-  src: url("./../fonts/Myriad-Pro-Bold.eot?#iefix") format("embedded-opentype"), url("./../fonts/Myriad-Pro-Bold.woff") format("woff"), url("./../fonts/Myriad-Pro-Bold.ttf") format("truetype"), url("./../fonts/Myriad-Pro-Bold.svg#Myriad-Pro-Bold") format("svg");
+  font-family: 'montserratmedium';
+  src: url("./../fonts/montserrat-medium.eot");
+  src: url("./../fonts/montserrat-medium.eot?#iefix") format("embedded-opentype"), url("./../fonts/montserrat-medium.woff2") format("woff2"), url("./../fonts/montserrat-medium.woff") format("woff"), url("./../fonts/montserrat-medium.ttf") format("truetype"), url("./../fonts/montserrat-medium.svg#montserratmedium") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'montserratlight';
+  src: url("./../fonts/montserrat-light.eot");
+  src: url("./../fonts/montserrat-light.eot?#iefix") format("embedded-opentype"), url("./../fonts/montserrat-light.woff2") format("woff2"), url("./../fonts/montserrat-light.woff") format("woff"), url("./../fonts/montserrat-light.ttf") format("truetype"), url("./../fonts/montserrat-light.svg#montserratlight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'montserratsemibold';
+  src: url("./../fonts/montserrat-semibold.eot");
+  src: url("./../fonts/montserrat-semibold.eot?#iefix") format("embedded-opentype"), url("./../fonts/montserrat-semibold.woff2") format("woff2"), url("./../fonts/montserrat-semibold.woff") format("woff"), url("./../fonts/montserrat-semibold.ttf") format("truetype"), url("./../fonts/montserrat-semibold.svg#montserratsemibold") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -59,6 +75,7 @@ a:hover {
   width: 100%;
 }
 .MainMenu li {
+  font-family: "montserratmedium";
   padding: 0 20px;
 }
 .MainMenu li.active a {
@@ -66,7 +83,6 @@ a:hover {
 }
 .MainMenu li a {
   color: white;
-  font-size: 1.125em;
   padding-bottom: 5px;
   text-align: center;
   -moz-transition: all 0.2s ease;
@@ -76,6 +92,9 @@ a:hover {
 }
 .MainMenu li a:hover {
   border-bottom: 4px solid white;
+  text-decoration: none;
+}
+.MainMenu li a:focus {
   text-decoration: none;
 }
 
@@ -101,24 +120,26 @@ a:hover {
   flex-basis: 100%;
 }
 .Carousel--home .carousel-caption h3 {
-  font-size: 4.5em;
+  font-family: "montserratlight";
+  font-size: 4em;
   margin-bottom: 0;
   margin-top: 0;
 }
 .Carousel--home .carousel-caption h2 {
-  font-size: 5.375em;
-  font-weight: bold;
+  font-family: "montserratsemibold";
+  font-size: 4.875em;
   margin-bottom: 0;
   margin-top: 0;
 }
 .Carousel--home .carousel-caption h4 {
-  font-size: 1.25em;
+  font-size: 1.125em;
   margin-top: 0;
 }
 
 .Button {
   border: none;
   display: inline-block;
+  font-family: "montserratmedium";
   font-size: 1.125em;
   padding: 15px 35px;
   -moz-transition: all 0.2s ease;
@@ -126,14 +147,14 @@ a:hover {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-.Button:hover {
+.Button:hover, .Button:focus {
   text-decoration: none;
 }
 .Button--orange {
   background-color: #ff6043;
   color: white;
 }
-.Button--orange:hover {
+.Button--orange:hover, .Button--orange:focus {
   background-color: white;
   color: #ff6043;
 }
@@ -163,7 +184,7 @@ a:hover {
   color: white;
   -webkit-flex-basis: 100%;
   flex-basis: 100%;
-  font-size: 2.625em;
+  font-size: 2.25em;
   margin: 0;
 }
 
@@ -173,7 +194,7 @@ a:hover {
 
 .Page-title {
   color: #111015;
-  font-family: "Myriad-Pro-Bold";
+  font-family: "montserratsemibold";
   font-size: 3em;
   margin-top: 0;
   margin-bottom: 15px;
@@ -184,8 +205,8 @@ a:hover {
 
 .Page-subtitle {
   color: #111015;
-  font-family: "Myriad-Pro-Bold";
-  font-size: 2em;
+  font-family: "montserratsemibold";
+  font-size: 1.5em;
   margin-top: 0;
   margin-bottom: 15px;
 }
@@ -201,6 +222,9 @@ a:hover {
   flex-basis: 33.33%;
   padding: 0 15px;
 }
+.Page-blog-item p {
+  font-family: "montserratlight";
+}
 
 .Page-blog-figure {
   margin-bottom: 15px;
@@ -208,12 +232,13 @@ a:hover {
 
 .Page-blog-date {
   color: gray;
+  font-family: "montserratlight";
   font-size: 0.875em;
   margin-top: 0;
 }
 
 .Page-blog-title {
-  font-family: "Myriad-Pro-Bold";
+  font-family: "montserratmedium";
   font-size: 1.5em;
 }
 .Page-blog-title a {
@@ -226,11 +251,11 @@ a:hover {
 }
 
 .Page-blog-readmore {
-  color: #ff6043;
-  font-family: "Myriad-Pro-Bold";
+  color: #f22424;
+  font-family: "montserratmedium";
 }
-.Page-blog-readmore:hover {
-  color: #111015;
+.Page-blog-readmore:hover, .Page-blog-readmore:focus {
+  color: #ff6043;
 }
 
 .Parallax {
@@ -248,7 +273,7 @@ a:hover {
   left: 10%;
   position: absolute;
   top: 0;
-  width: 60%;
+  width: 70%;
 }
 
 .Parallax-title, .Parallax-subtitle {
@@ -259,11 +284,12 @@ a:hover {
 }
 
 .Parallax-subtitle {
-  font-size: 3.5em;
+  font-family: "montserratlight";
+  font-size: 3em;
 }
 
 .Parallax-title {
-  font-family: "Myriad-Pro-Bold";
+  font-family: "montserratsemibold";
   font-size: 4em;
 }
 
@@ -278,11 +304,12 @@ a:hover {
 }
 
 .Slogan-subtitle {
-  font-size: 3.5em;
+  font-family: "montserratlight";
+  font-size: 3em;
 }
 
 .Slogan-title {
-  font-family: "Myriad-Pro-Bold";
+  font-family: "montserratsemibold";
   font-size: 4em;
 }
 
@@ -333,7 +360,8 @@ a:hover {
 }
 
 .Footer {
-  background-color: #111015;
+  background: #111015 url("./../images/footer-bg.jpg") center center no-repeat;
+  background-size: cover;
   padding: 50px 0;
 }
 
@@ -343,6 +371,7 @@ a:hover {
 
 .Footer-text {
   color: white;
+  font-family: "montserratlight";
   font-size: 0.875em;
   margin-bottom: 0;
 }
