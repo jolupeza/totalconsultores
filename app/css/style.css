@@ -48,8 +48,15 @@ a:hover {
   padding: 15px 0;
   position: fixed;
   top: 0;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
   width: 100%;
   z-index: 99;
+}
+.Header.affix {
+  background-color: #fa5151;
 }
 
 .Header-logo {
@@ -78,7 +85,7 @@ a:hover {
   font-family: "montserratmedium";
   padding: 0 20px;
 }
-.MainMenu li.active a {
+.MainMenu li.current-menu-item a, .MainMenu li.active a {
   border-bottom: 4px solid white;
 }
 .MainMenu li a {
@@ -155,8 +162,8 @@ a:hover {
   color: white;
 }
 .Button--orange:hover, .Button--orange:focus {
-  background-color: white;
-  color: #ff6043;
+  background-color: #fa5151;
+  color: white;
 }
 
 .Services {
@@ -190,6 +197,9 @@ a:hover {
 
 .Page {
   padding: 80px 0;
+}
+.Page p {
+  font-family: "montserratlight";
 }
 
 .Page-title {

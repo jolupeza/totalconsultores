@@ -8,7 +8,7 @@
   li {
     font-family: "montserratmedium";
     padding: 0 20px;
-    &.active {
+    &.current-menu-item, &.active {
       a {
         border-bottom: 4px solid white;
       }

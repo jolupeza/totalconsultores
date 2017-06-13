@@ -3,8 +3,12 @@
   padding: 15px 0;
   position: fixed;
   top: 0;
+  @include transition(all 0.2s ease);
   width: 100%;
   z-index: 99;
+  &.affix {
+    background-color: $redSoft;
+  }
 }
 .Header-logo {
   margin: 0;

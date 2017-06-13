@@ -11,7 +11,8 @@ var j = jQuery.noConflict();
     j('.Header').affix({
       offset: {
         top: function () {
-          return j('.Carousel--home').outerHeight(true) / 3;
+          var nextElement = j('.Header').next();
+          return nextElement.outerHeight(true) / 4;
         }
       }
     });
@@ -50,7 +51,7 @@ var j = jQuery.noConflict();
   });
 
   $doc.on('ready', function () {
-    // affixHeader();
+    affixHeader();
 
     // j('.ArrowTop').on('click', function(ev){
     //   ev.preventDefault();
