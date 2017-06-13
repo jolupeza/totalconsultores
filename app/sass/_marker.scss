@@ -1,0 +1,20 @@
+.Marker {
+  padding-top: 15px;
+}
+.Marker-list {
+  padding-left: 0;
+  li {
+    font-family: "montserratlight";
+    font-size: 14px;
+    list-style: none;
+    margin-bottom: 10px;
+    strong {
+      font-family: "montserratsemibold";
+    }
+  }
+}
+.Marker-title {
+  font-family: "montserratsemibold";
+  font-size: 1.75em;
+  margin-top: 0;
+}

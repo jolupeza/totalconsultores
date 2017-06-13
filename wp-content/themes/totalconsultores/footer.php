@@ -1,29 +1,36 @@
     <?php $options = get_option('tc_custom_settings'); ?>
+    <?php
+      $lat = isset($options['latitud']) ? $options['latitud'] : '';
+      $long = isset($options['longitud']) ? $options['longitud'] : '';
+    ?>
 
     <section class="Contact">
       <article class="Contact-map">
-        <figure class="Contact-map-figure">
-          <img src="images/map.jpg" class="img-responsive" />
-        </figure>
+        <?php if (!empty($lat) && !empty($long)) : ?>
+          <figure class="Contact-map-figure" id="map" data-lat="<?php echo $lat; ?>" data-long="<?php echo $long; ?>"></figure>
+        <?php endif; ?>
       </article>
       <article class="Contact-form">
         <h2 class="Page-title Page-title--white">Contáctanos</h2>
 
-        <form class="Form">
+        <p class="text-white text-center" id="js-form-contact-msg"></p>
+
+        <form class="Form" action="" method="POST" id="js-frm-contact">
           <div class="form-group">
             <label for="contact_name" class="sr-only">Nombre</label>
-            <input type="text" class="form-control" name="contact_name" id="contact_name" placeholder="Nombre">
+            <input type="text" class="form-control" name="contact_name" id="contact_name" placeholder="Nombre" autocomplete="off" required>
           </div>
           <div class="form-group">
             <label for="contact_email" class="sr-only">Correo</label>
-            <input type="email" class="form-control" name="contact_email" id="contact_email" placeholder="Correo">
+            <input type="email" class="form-control" name="contact_email" id="contact_email" placeholder="Correo" autocomplete="off" required>
           </div>
           <div class="form-group">
             <label for="contact_message" class="sr-only">Mensaje</label>
-            <textarea class="form-control" name="contact_message" id="contact_message" placeholder="Mensaje" rows="3"></textarea>
+            <textarea class="form-control" name="contact_message" id="contact_message" placeholder="Mensaje" rows="3" required></textarea>
           </div>
+
           <p class="text-center">
-            <button type="submit" class="Button Button--orange text-uppercase">enviar</button>
+            <button type="submit" class="Button Button--orange text-uppercase">enviar <span class="Form-loader rotateIn hidden" id="js-form-contact-loader"><i class="fa fa-refresh"></i></span></button>
           </p>
         </form>
       </article>
@@ -96,6 +103,69 @@
       _root_ = '<?php echo home_url(); ?>';
     </script>
 
+    <script>
+      var map, marker, infowindow;
+    </script>
     <?php wp_footer(); ?>
+
+    <?php
+      if (!empty($lat) && !empty($long)) :
+    ?>
+      <script>
+        var lat = <?php echo $lat; ?>,
+            lon = <?php echo $long; ?>;
+        var contentString = '<div id="content" class="Marker">'+
+              '<div id="siteNotice">'+
+              '</div>'+
+              '<h1 id="firstHeading" class="firstHeading Marker-title text-center">Total Consultores S.A.C.</h1>'+
+              '<div id="bodyContent" class="Marker-body">'+
+              '<ul class="Marker-list">'+
+              '<li><strong>Dirección: </strong><?php echo $options['address'] ?></li>'+
+              '<li><strong>Teléfono: </strong><?php echo $options['phone'] ?></li>'+
+              '<li><strong>Correo: </strong><?php echo $options['email'] ?></li>'+
+              '</ul>'+
+              '</div>'+
+              '</div>';
+
+        function initMap() {
+          var mapCoord = new google.maps.LatLng(lat, lon);
+          var opciones = {
+            zoom: 16,
+            center: mapCoord,
+            scrollwheel: false,
+          };
+
+          infowindow = new google.maps.InfoWindow({
+            content: contentString,
+            maxWidth: 300
+          });
+
+          map = new google.maps.Map(document.getElementById('map'), opciones);
+
+          marker = new google.maps.Marker({
+            position: mapCoord,
+            map: map,
+            title: 'Total Consultores S.A.C.'
+          });
+
+          marker.addListener('click', function() {
+            infowindow.open(map, marker);
+          });
+
+          // mapFooter = new google.maps.Map(document.getElementById('mapFooter'), opcionesMapFooter);
+
+          // markerFooter = new google.maps.Marker({
+          //   position: mapCoord,
+          //   map: mapFooter,
+          //   title: 'Cepuch'
+          // });
+
+          // markerFooter.addListener('click', function() {
+          //   infowindow.open(mapFooter, markerFooter);
+          // });
+        }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDz89lMNjhrpWjPg24sYNSmvv3bpTJGEx0&callback=initMap" async defer></script>
+    <?php endif; ?>
   </body>
 </html>

@@ -104,4 +104,76 @@ function tc_customize_register($wp_customize) {
     'settings' => 'tc_custom_settings[email]',
     'type'     => 'text'
   ));
+
+  // Address
+  $wp_customize->add_setting('tc_custom_settings[address]', array(
+    'default' => '',
+    'type'    => 'option'
+  ));
+
+  $wp_customize->add_control('tc_custom_settings[address]', array(
+    'label'    => __('Dirección', THEMEDOMAIN),
+    'section'  => 'tc_info',
+    'settings' => 'tc_custom_settings[address]',
+    'type'     => 'text'
+  ));
+
+  // Latitud
+  $wp_customize->add_setting('tc_custom_settings[latitud]', array(
+    'default' => '',
+    'type'    => 'option'
+  ));
+
+  $wp_customize->add_control('tc_custom_settings[latitud]', array(
+    'label'    => __('Ubicación Google Map Latitud', THEMEDOMAIN),
+    'section'  => 'tc_info',
+    'settings' => 'tc_custom_settings[latitud]',
+    'type'     => 'text'
+  ));
+
+  // Longitud
+  $wp_customize->add_setting('tc_custom_settings[longitud]', array(
+    'default' => '',
+    'type'    => 'option'
+  ));
+
+  $wp_customize->add_control('tc_custom_settings[longitud]', array(
+    'label'    => __('Ubicación Google Map Longitud', THEMEDOMAIN),
+    'section'  => 'tc_info',
+    'settings' => 'tc_custom_settings[longitud]',
+    'type'     => 'text'
+  ));
+
+  // Slogan
+  $wp_customize->add_section('tc_slogan', [
+    'title' => __('Frase o Slogan', THEMEDOMAIN),
+    'description' => __('Configurar frase o slogan de la empresa', THEMEDOMAIN),
+    'priority' => 37
+  ]);
+
+  // Slogan Subtitle
+  $wp_customize->add_setting('tc_custom_settings[slogan_subtitle]', array(
+    'default' => '',
+    'type'    => 'option'
+  ));
+
+  $wp_customize->add_control('tc_custom_settings[slogan_subtitle]', array(
+    'label'    => __('Texto Superior', THEMEDOMAIN),
+    'section'  => 'tc_slogan',
+    'settings' => 'tc_custom_settings[slogan_subtitle]',
+    'type'     => 'text'
+  ));
+
+  // Slogan Title
+  $wp_customize->add_setting('tc_custom_settings[slogan_title]', array(
+    'default' => '',
+    'type'    => 'option'
+  ));
+
+  $wp_customize->add_control('tc_custom_settings[slogan_title]', array(
+    'label'    => __('Texto Principal', THEMEDOMAIN),
+    'section'  => 'tc_slogan',
+    'settings' => 'tc_custom_settings[slogan_title]',
+    'type'     => 'text'
+  ));
 }

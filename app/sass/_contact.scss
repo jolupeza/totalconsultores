@@ -4,6 +4,9 @@
 .Contact-map, .Contact-form {
   @include flex-basis(50%);
 }
+.Contact-map-figure {
+  height: 100%;
+}
 .Contact-form {
   background-color: $black;
   padding: 80px 12%;

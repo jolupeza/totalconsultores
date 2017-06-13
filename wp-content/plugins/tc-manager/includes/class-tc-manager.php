@@ -104,20 +104,16 @@ class Tc_Manager
         $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_sliders_add');
         $this->loader->add_action('save_post', $admin, 'cd_mb_sliders_save' );
         
-//        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_partners_add');
-//        $this->loader->add_action('save_post', $admin, 'cd_mb_partners_save' );
-//        
-//        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_locals_add');
-//        $this->loader->add_action('save_post', $admin, 'cd_mb_locals_save' );
-//        
         $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_parallaxs_add');
         $this->loader->add_action('save_post', $admin, 'cd_mb_parallaxs_save' );
         
         $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_pages_add');
         $this->loader->add_action('save_post', $admin, 'cd_mb_pages_save' );
         
-//        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_achievements_add');
-//        $this->loader->add_action('save_post', $admin, 'cd_mb_achievements_save' );
+        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_contacts_add');
+        $this->loader->add_filter('manage_edit-contacts_columns', $admin, 'custom_columns_contacts');
+        $this->loader->add_action('manage_contacts_posts_custom_column', $admin, 'custom_column_contacts');
+//        $this->loader->add_filter('views_edit-contacts', $admin, 'contacts_button_view_edit');
     }
 
     /**

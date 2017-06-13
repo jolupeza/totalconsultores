@@ -15,6 +15,10 @@ a:hover {
   text-decoration: none;
 }
 
+.text-white {
+  color: white;
+}
+
 @font-face {
   font-family: 'montserratregular';
   src: url("./../fonts/montserrat-regular.eot");
@@ -351,6 +355,14 @@ a:hover {
   height: 100px;
 }
 
+.Form-loader {
+  color: white;
+  display: inline-block;
+  font-size: 2em;
+  margin: 0 0 0 15px;
+  vertical-align: middle;
+}
+
 .Contact {
   display: -webkit-flex;
   display: flex;
@@ -359,6 +371,10 @@ a:hover {
 .Contact-map, .Contact-form {
   -webkit-flex-basis: 50%;
   flex-basis: 50%;
+}
+
+.Contact-map-figure {
+  height: 100%;
 }
 
 .Contact-form {
@@ -403,4 +419,27 @@ a:hover {
 }
 .Footer-social > .Footer-social-item a:hover {
   color: #ff6043;
+}
+
+.Marker {
+  padding-top: 15px;
+}
+
+.Marker-list {
+  padding-left: 0;
+}
+.Marker-list li {
+  font-family: "montserratlight";
+  font-size: 14px;
+  list-style: none;
+  margin-bottom: 10px;
+}
+.Marker-list li strong {
+  font-family: "montserratsemibold";
+}
+
+.Marker-title {
+  font-family: "montserratsemibold";
+  font-size: 1.75em;
+  margin-top: 0;
 }
