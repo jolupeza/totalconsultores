@@ -7,11 +7,17 @@ body {
 }
 a {
   @include transition(all 0.2s ease);
-  &:hover {
+  &:hover, &:focus {
     text-decoration: none;
   }
 }
 
 .text-white {
   color: white;
+}
+.text-title {
+  color: $title-color;
+}
+.text-orange {
+  color: $orange;
 }

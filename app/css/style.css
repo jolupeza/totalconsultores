@@ -11,12 +11,20 @@ a {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-a:hover {
+a:hover, a:focus {
   text-decoration: none;
 }
 
 .text-white {
   color: white;
+}
+
+.text-title {
+  color: #3b3b3b;
+}
+
+.text-orange {
+  color: #ff6043;
 }
 
 @font-face {
@@ -47,6 +55,31 @@ a:hover {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'icomoon';
+  src: url("./../fonts/icomoon.eot?94e552");
+  src: url("./../fonts/icomoon.eot?94e552#iefix") format("embedded-opentype"), url("./../fonts/icomoon.ttf?94e552") format("truetype"), url("./../fonts/icomoon.woff?94e552") format("woff"), url("./../fonts/icomoon.svg?94e552#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-play:before {
+  content: "\e900";
+}
+
 .Header {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 15px 0;
@@ -58,6 +91,9 @@ a:hover {
   transition: all 0.2s ease;
   width: 100%;
   z-index: 99;
+}
+.Header--black {
+  background-color: transparent;
 }
 .Header.affix {
   background-color: #fa5151;
@@ -107,6 +143,15 @@ a:hover {
 }
 .MainMenu li a:focus {
   text-decoration: none;
+}
+.MainMenu--black li.current-menu-item a, .MainMenu--black li.active a {
+  border-bottom: 4px solid #fa5151;
+}
+.MainMenu--black li a {
+  color: #333333;
+}
+.MainMenu--black li a:hover {
+  border-bottom: 4px solid #fa5151;
 }
 
 .Carousel--home .carousel-caption {
@@ -200,14 +245,39 @@ a:hover {
 }
 
 .Page {
-  padding: 80px 0;
+  padding: 110px 0 80px;
+}
+.Page--borderOrange {
+  background: white url("./../images/border-orange.jpg") 100% 0 no-repeat;
+  background-size: contain;
+}
+.Page--intro {
+  padding-top: 200px;
 }
 .Page p {
   font-family: "montserratlight";
 }
+.Page p a {
+  color: #1f1f1f;
+}
+.Page p a:hover {
+  color: #ff6043;
+}
+
+.Page-section {
+  margin-top: 30px;
+}
+
+.Page-link {
+  margin: 30px 0;
+}
+.Page-link i[class^="icon-"] {
+  font-size: 2em;
+  vertical-align: middle;
+}
 
 .Page-title {
-  color: #111015;
+  color: #3b3b3b;
   font-family: "montserratsemibold";
   font-size: 3em;
   margin-top: 0;
@@ -218,11 +288,25 @@ a:hover {
 }
 
 .Page-subtitle {
-  color: #111015;
+  color: #3b3b3b;
   font-family: "montserratsemibold";
   font-size: 1.5em;
   margin-top: 0;
   margin-bottom: 15px;
+}
+
+.Page-legend {
+  font-family: "montserratlight";
+  font-size: 3em;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.Page-resalt {
+  font-family: "montserratsemibold";
+  font-size: 4em;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .Page-blog {
@@ -270,6 +354,65 @@ a:hover {
 }
 .Page-blog-readmore:hover, .Page-blog-readmore:focus {
   color: #ff6043;
+}
+
+.Page-separator {
+  border-top-width: 3px;
+  border-top-style: solid;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+.Page-separator--short {
+  width: 70px;
+}
+.Page-separator--right {
+  margin-left: auto;
+  margin-right: 0;
+}
+.Page-separator--orange {
+  border-top-color: #ff6043;
+}
+
+.Page-list {
+  padding-left: 0;
+}
+.Page-list--flex {
+  display: -webkit-flex;
+  display: flex;
+}
+.Page-list--flex li {
+  -webkit-flex: 1 1 0;
+  flex: 1 1 0;
+  list-style: none;
+}
+
+.Page-flex {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.Page-flex-item {
+  margin-bottom: 40px;
+}
+.Page-flex-item--50 {
+  -webkit-flex: 0 1 50%;
+  flex: 0 1 50%;
+  padding: 0 20px;
+}
+.Page-flex-item--icon {
+  padding-left: 60px;
+  position: relative;
+}
+.Page-flex-item--icon-casco::before {
+  background: transparent url("./../images/icon-casco.png") 0 0 no-repeat;
+  content: "";
+  display: inline-block;
+  height: 44px;
+  left: 0;
+  position: absolute;
+  width: 44px;
 }
 
 .Parallax {

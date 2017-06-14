@@ -27,4 +27,19 @@
       }
     }
   }
+  &--black {
+    li {
+      &.current-menu-item, &.active {
+        a {
+          border-bottom: 4px solid $redSoft;
+        }
+      }
+      a {
+        color: $blackSoft;
+        &:hover {
+          border-bottom: 4px solid $redSoft;
+        }
+      }
+    }
+  }
 }
