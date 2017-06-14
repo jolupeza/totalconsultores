@@ -10,10 +10,10 @@
   }
   &--orange {
     background-color: $orange;
-    color: white;
+    color: white !important;
     &:hover, &:focus {
       background-color: $redSoft;
-      color: white;
+      color: white !important;
     }
   }
 }

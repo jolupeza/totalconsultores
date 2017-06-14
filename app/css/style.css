@@ -220,11 +220,11 @@ a:hover, a:focus {
 }
 .Button--orange {
   background-color: #ff6043;
-  color: white;
+  color: white !important;
 }
 .Button--orange:hover, .Button--orange:focus {
   background-color: #fa5151;
-  color: white;
+  color: white !important;
 }
 
 .Arrow {
