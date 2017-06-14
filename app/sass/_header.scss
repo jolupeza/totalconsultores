@@ -11,6 +11,21 @@
   }
   &.affix {
     background-color: $redSoft;
+    .MainMenu--black {
+      li {
+        &.current-menu-item, &.active {
+          a {
+            border-bottom: 4px solid white;
+          }
+        }
+        a {
+          color: white;
+          &:hover {
+            border-bottom: 4px solid white;
+          }
+        }
+      }
+    }
   }
 }
 .Header-logo {

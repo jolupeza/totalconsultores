@@ -17,3 +17,27 @@
     }
   }
 }
+.Arrow {
+  @include animation-duration(3s);
+  background-color: transparent;
+  border: none;
+  bottom: 80px;
+  color: white;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  i {
+    display: block;
+    font-size: 2em;
+  }
+}
+.ArrowTop {
+  @include animation-duration(3s);
+  bottom: 50px;
+  color: $blackSoft;
+  display: none;
+  font-size: 2em;
+  position: fixed;
+  right: 25px;
+  z-index: 9;
+}

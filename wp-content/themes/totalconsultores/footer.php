@@ -99,6 +99,8 @@
       </div>
     </footer>
 
+    <button class="ArrowTop text-hide" title="Ir arriba"><i class="glyphicon glyphicon-chevron-up"></i></button>
+
     <script>
       _root_ = '<?php echo home_url(); ?>';
     </script>

@@ -21,7 +21,7 @@ add_action('wp_enqueue_scripts', 'load_custom_scripts');
 /* Add Theme Support */
 /****************************************/
 if ( function_exists('add_theme_support') ) {
-  add_theme_support('post-thumbnails', array('post', 'page', 'sliders', 'parallaxs'));
+  add_theme_support('post-thumbnails', array('post', 'page', 'sliders', 'parallaxs', 'customers'));
 }
 
 /****************************************/

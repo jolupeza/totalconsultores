@@ -14,11 +14,40 @@ function display_custom_options_link() {
 add_action('customize_register', 'tc_customize_register');
 
 function tc_customize_register($wp_customize) {
+  // Logo
+  $wp_customize->add_section('tc_logo', array(
+    'title' => __('Logo', THEMEDOMAIN),
+    'description' => __('Le permite cargar un logo personalizado.', THEMEDOMAIN),
+    'priority' => 35
+  ));
+
+  $wp_customize->add_setting('tc_custom_settings[logo_black]', array(
+    'default' => IMAGES . '/logo-black.png',
+    'type' => 'option'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'logo_black', array(
+    'label' => __('Logo Cabecera Blanca', THEMEDOMAIN),
+    'section' => 'tc_logo',
+    'settings' => 'tc_custom_settings[logo_black]'
+  )));
+
+  $wp_customize->add_setting('tc_custom_settings[logo_scroll]', array(
+    'default' => IMAGES . '/logo-min.png',
+    'type' => 'option'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'logo_scroll', array(
+    'label' => __('Logo al hacer scroll', THEMEDOMAIN),
+    'section' => 'tc_logo',
+    'settings' => 'tc_custom_settings[logo_scroll]'
+  )));
+
   // Links Social Media
   $wp_customize->add_section('tc_social', [
     'title' => __('Links Redes Sociales', THEMEDOMAIN),
     'description' => __('Mostrar links a redes sociales', THEMEDOMAIN),
-    'priority' => 35
+    'priority' => 36
   ]);
 
   $wp_customize->add_setting('tc_custom_settings[display_social_link]', [
@@ -76,7 +105,7 @@ function tc_customize_register($wp_customize) {
   $wp_customize->add_section('tc_info', [
     'title' => __('Datos de la empresa', THEMEDOMAIN),
     'description' => __('Configurar información sobre la empresa', THEMEDOMAIN),
-    'priority' => 36
+    'priority' => 37
   ]);
 
   // Phone
@@ -148,7 +177,7 @@ function tc_customize_register($wp_customize) {
   $wp_customize->add_section('tc_slogan', [
     'title' => __('Frase o Slogan', THEMEDOMAIN),
     'description' => __('Configurar frase o slogan de la empresa', THEMEDOMAIN),
-    'priority' => 37
+    'priority' => 38
   ]);
 
   // Slogan Subtitle

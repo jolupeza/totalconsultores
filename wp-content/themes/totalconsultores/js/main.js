@@ -66,24 +66,24 @@ var j = jQuery.noConflict();
   $doc.on('ready', function () {
     affixHeader();
 
-    // j('.ArrowTop').on('click', function(ev){
-    //   ev.preventDefault();
-    //   j('html, body').animate({scrollTop: 0}, 800);
-    // });
+    j('.ArrowTop').on('click', function(ev){
+      ev.preventDefault();
+      j('html, body').animate({scrollTop: 0}, 800);
+    });
 
-    // j('.js-move-scroll').on('click', function(event) {
-    //   event.preventDefault();
-    //   var $this = j(this);
-    //   var dest = $this.data('href');
+    j('.js-move-scroll').on('click', function(event) {
+      event.preventDefault();
+      var $this = j(this);
+      var dest = $this.data('href');
 
-    //   dest = (typeof dest === 'undefined') ? $this.attr('href') : dest;
+      dest = (typeof dest === 'undefined') ? $this.attr('href') : dest;
 
-    //   dest = (dest.charAt(0) === '#') ? dest : '#' + dest;
+      dest = (dest.charAt(0) === '#') ? dest : '#' + dest;
 
-    //   j('html, body').stop().animate({
-    //     scrollTop: j(dest).offset().top
-    //   }, 2000, 'easeInOutExpo');
-    // });
+      j('html, body').stop().animate({
+        scrollTop: j(dest).offset().top
+      }, 2000, 'easeInOutExpo');
+    });
 
     j('#js-frm-contact').formValidation({
       locale: 'es_ES',

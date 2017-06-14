@@ -98,6 +98,15 @@ a:hover, a:focus {
 .Header.affix {
   background-color: #fa5151;
 }
+.Header.affix .MainMenu--black li.current-menu-item a, .Header.affix .MainMenu--black li.active a {
+  border-bottom: 4px solid white;
+}
+.Header.affix .MainMenu--black li a {
+  color: white;
+}
+.Header.affix .MainMenu--black li a:hover {
+  border-bottom: 4px solid white;
+}
 
 .Header-logo {
   margin: 0;
@@ -154,6 +163,9 @@ a:hover, a:focus {
   border-bottom: 4px solid #fa5151;
 }
 
+.Carousel--home {
+  position: relative;
+}
 .Carousel--home .carousel-caption {
   -webkit-align-content: center;
   align-content: center;
@@ -213,6 +225,36 @@ a:hover, a:focus {
 .Button--orange:hover, .Button--orange:focus {
   background-color: #fa5151;
   color: white;
+}
+
+.Arrow {
+  -moz-animation-duration: 3s;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  background-color: transparent;
+  border: none;
+  bottom: 80px;
+  color: white;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+}
+.Arrow i {
+  display: block;
+  font-size: 2em;
+}
+
+.ArrowTop {
+  -moz-animation-duration: 3s;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  bottom: 50px;
+  color: #333333;
+  display: none;
+  font-size: 2em;
+  position: fixed;
+  right: 25px;
+  z-index: 9;
 }
 
 .Services {

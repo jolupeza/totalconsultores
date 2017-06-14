@@ -59,5 +59,7 @@
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a> -->
+
+    <button class="Arrow js-move-scroll" data-href="about">ir abajo <i class="glyphicon glyphicon-chevron-down"></i></button>
   </section>
 <?php endif; ?>

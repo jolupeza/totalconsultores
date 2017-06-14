@@ -1,5 +1,6 @@
 .Carousel {
   &--home {
+    position: relative;
     .carousel-caption {
       @include align-content(center);
       @include display-flex();

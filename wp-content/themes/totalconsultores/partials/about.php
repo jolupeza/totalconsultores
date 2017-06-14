@@ -16,7 +16,7 @@
       $values = get_post_custom(get_the_id());
       $parallaxAbout = isset($values['mb_parallax']) ? esc_attr($values['mb_parallax'][0]) : $parallaxAbout;
 ?>
-  <section class="Page">
+  <section class="Page" id="about">
     <div class="container">
       <div class="row">
         <div class="col-md-5">
