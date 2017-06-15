@@ -786,7 +786,7 @@ class Tc_Manager_Admin
             // 'hierarchical'        => false,
             'supports' => array(
                 'title',
-//                'editor',
+                'editor',
                 'custom-fields',
                 'author',
                 'thumbnail',

@@ -4,6 +4,24 @@ body {
   font-family: "montserratregular";
   font-size: 16px;
 }
+body.single-projects .MainMenu--black li.menu-item-object-projects a {
+  border-bottom: 4px solid #fa5151;
+}
+body.single-projects .MainMenu--black li a {
+  color: #333333;
+}
+body.single-projects .MainMenu--black li a:hover {
+  border-bottom: 4px solid #fa5151;
+}
+body.single-projects .Header.affix .MainMenu--black li.menu-item-object-projects a {
+  border-bottom: 4px solid white;
+}
+body.single-projects .Header.affix .MainMenu--black li a {
+  color: white;
+}
+body.single-projects .Header.affix .MainMenu--black li a:hover {
+  border-bottom: 4px solid white;
+}
 
 a {
   -moz-transition: all 0.2s ease;

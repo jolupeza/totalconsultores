@@ -4,6 +4,42 @@ body {
   color: $text-color;
   font-family: "montserratregular";
   font-size: 16px;
+  &.single-projects {
+    .MainMenu--black {
+      li {
+        &.menu-item-object-projects {
+          a {
+            border-bottom: 4px solid $redSoft;
+          }
+        }
+        a {
+          color: $blackSoft;
+          &:hover {
+            border-bottom: 4px solid $redSoft;
+          }
+        }
+      }
+    }
+    .Header {
+      &.affix {
+        .MainMenu--black {
+          li {
+            &.menu-item-object-projects {
+              a {
+                border-bottom: 4px solid white;
+              }
+            }
+            a {
+              color: white;
+              &:hover {
+                border-bottom: 4px solid white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 a {
   @include transition(all 0.2s ease);

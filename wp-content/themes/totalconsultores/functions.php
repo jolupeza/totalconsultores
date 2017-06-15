@@ -22,6 +22,11 @@ add_action('wp_enqueue_scripts', 'load_custom_scripts');
 /****************************************/
 if ( function_exists('add_theme_support') ) {
   add_theme_support('post-thumbnails', array('post', 'page', 'sliders', 'parallaxs', 'customers', 'projects'));
+
+  add_image_size('projects-single', 585, 311, [
+    'x_crop_position' => 'center',
+    'y_crop_position' => 'center'
+  ]);
 }
 
 /****************************************/
