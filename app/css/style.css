@@ -57,8 +57,8 @@ a:hover, a:focus {
 }
 @font-face {
   font-family: 'icomoon';
-  src: url("./../fonts/icomoon.eot?94e552");
-  src: url("./../fonts/icomoon.eot?94e552#iefix") format("embedded-opentype"), url("./../fonts/icomoon.ttf?94e552") format("truetype"), url("./../fonts/icomoon.woff?94e552") format("woff"), url("./../fonts/icomoon.svg?94e552#icomoon") format("svg");
+  src: url("./../fonts/icomoon.eot?s7nxcr");
+  src: url("./../fonts/icomoon.eot?s7nxcr#iefix") format("embedded-opentype"), url("./../fonts/icomoon.ttf?s7nxcr") format("truetype"), url("./../fonts/icomoon.woff?s7nxcr") format("woff"), url("./../fonts/icomoon.svg?s7nxcr#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -74,6 +74,10 @@ a:hover, a:focus {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-search:before {
+  content: "\e901";
 }
 
 .icon-play:before {
@@ -225,6 +229,15 @@ a:hover, a:focus {
 .Button--orange:hover, .Button--orange:focus {
   background-color: #fa5151;
   color: white !important;
+}
+.Button--white {
+  background-color: #fff;
+}
+.Button i[class^="icon-"] {
+  vertical-align: middle;
+}
+.Button--normal {
+  font-size: 1em;
 }
 
 .Arrow {
@@ -434,6 +447,18 @@ a:hover, a:focus {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
+.Page-flex--blog .Page-flex-item--50 {
+  margin-bottom: 0;
+  padding: 0;
+}
+.Page-flex--blog .Page-flex-item:hover .Page-flex--blog-content {
+  display: -webkit-flex;
+  display: flex;
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
 
 .Page-flex-item {
   margin-bottom: 40px;
@@ -455,6 +480,88 @@ a:hover, a:focus {
   left: 0;
   position: absolute;
   width: 44px;
+}
+
+.Page-flex--blog-figure {
+  position: relative;
+}
+
+.Page-flex--blog-content {
+  background-color: rgba(250, 81, 81, 0.7);
+  display: none;
+  -webkit-align-content: center;
+  align-content: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  -moz-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  -webkit-transform: scale(0, 0);
+  transform: scale(0, 0);
+  width: 100%;
+}
+.Page-flex--blog-content .Page-subtitle {
+  color: white;
+  margin-bottom: 25px;
+}
+.Page-flex--blog-content .Page-subtitle::after {
+  background-color: #fff;
+  content: "";
+  display: block;
+  height: 2px;
+  margin: 25px auto 0;
+  width: 32px;
+}
+.Page-flex--blog-content .Page-subtitle, .Page-flex--blog-content p {
+  -webkit-flex-basis: 100%;
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.Page-nav {
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.Page-nav-list {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-bottom: 0;
+  padding-left: 0;
+  width: 100%;
+}
+.Page-nav-list li {
+  border: 1px solid #3b3b3b;
+  font-size: 1.125em;
+  list-style: none;
+  margin-right: 15px;
+  padding: 15px 20px;
+}
+.Page-nav-list li:last-child {
+  margin-right: 0;
+}
+.Page-nav-list li a {
+  color: #3b3b3b;
+  display: inline-block;
+}
+.Page-nav-list li:hover {
+  background-color: #fa5151;
+  border-color: #fa5151;
+}
+.Page-nav-list li:hover a {
+  color: white;
 }
 
 .Parallax {

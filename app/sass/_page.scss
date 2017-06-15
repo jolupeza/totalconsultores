@@ -125,6 +125,20 @@
 .Page-flex {
   @include display-flex();
   @include flex-wrap(wrap);
+  &--blog {
+    .Page-flex-item--50 {
+      margin-bottom: 0;
+      padding: 0;
+    }
+    .Page-flex-item {
+      &:hover {
+        .Page-flex--blog-content {
+          @include display-flex();
+          @include scale(1);
+        }
+      }
+    }
+  }
 }
 .Page-flex-item {
   margin-bottom: 40px;
@@ -144,6 +158,71 @@
         left: 0;
         position: absolute;
         width: 44px;
+      }
+    }
+  }
+}
+.Page-flex--blog-figure {
+  position: relative;
+}
+.Page-flex--blog-content {
+  background-color: rgba($redSoft, 0.7);
+  display: none;
+  @include align-content(center);
+  @include justify-content(center);
+  @include flex-wrap(wrap);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  @include transition(all 0.2s ease);
+  @include scale(0);
+  width: 100%;
+  .Page-subtitle {
+    color: white;
+    margin-bottom: 25px;
+    &::after {
+      background-color: #fff;
+      content: "";
+      display: block;
+      height: 2px;
+      margin: 25px auto 0;
+      width: 32px;
+    }
+  }
+  .Page-subtitle, p {
+    @include flex-basis(100%);
+    text-align: center;
+  }
+}
+.Page-nav {
+  @include display-flex();
+  margin-bottom: 50px;
+}
+.Page-nav-list {
+  @include display-flex();
+  @include justify-content(center);
+  margin-bottom: 0;
+  padding-left: 0;
+  width: 100%;
+  li {
+    border: 1px solid $title-color;
+    font-size: 1.125em;
+    list-style: none;
+    margin-right: 15px;
+    padding: 15px 20px;
+    &:last-child {
+      margin-right: 0;
+    }
+    a {
+      color: $title-color;
+      display: inline-block;
+    }
+    &:hover {
+      background-color: $redSoft;
+      border-color: $redSoft;
+      a {
+        color: white;
       }
     }
   }

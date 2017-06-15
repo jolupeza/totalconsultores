@@ -16,6 +16,15 @@
       color: white !important;
     }
   }
+  &--white {
+    background-color: #fff;
+  }
+  i[class^="icon-"] {
+    vertical-align: middle;
+  }
+  &--normal {
+    font-size: 1em;
+  }
 }
 .Arrow {
   @include animation-duration(3s);
