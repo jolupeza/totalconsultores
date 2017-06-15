@@ -34,13 +34,15 @@
         <?php while (have_posts()) : ?>
           <?php the_post(); ?>
           <article class="Page-flex-item Page-flex-item--50">
-            <figure class="Page-flex--blog-figure">
-              <img class="img-responsive center-block" src="<?php echo IMAGES; ?>/projects/project01.jpg" alt="">
-              <div class="Page-flex--blog-content">
-                <h3 class="Page-subtitle"><?php the_title(); ?></h3>
-                <p><a href="<?php the_permalink(); ?>" class="Button Button--white Button--normal"><i class="icon-search"></i> ver proyecto</a></p>
-              </div>
-            </figure>
+            <?php if (has_post_thumbnail()) : ?>
+              <figure class="Page-flex--blog-figure">
+                <?php the_post_thumbnail('projects-single', ['class' => 'img-responsive center-block']); ?>
+                <div class="Page-flex--blog-content">
+                  <h3 class="Page-subtitle"><?php the_title(); ?></h3>
+                  <p><a href="<?php the_permalink(); ?>" class="Button Button--white Button--normal"><i class="icon-search"></i> ver proyecto</a></p>
+                </div>
+              </figure>
+            <?php endif; ?>
           </article>
         <?php endwhile; ?>
       </section>

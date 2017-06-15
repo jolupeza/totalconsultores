@@ -57,16 +57,16 @@ add_action('init', 'register_my_menus');
 /****************************************/
 /* Setting Mailtrap */
 /****************************************/
-function mailtrap($phpmailer) {
-  $phpmailer->isSMTP();
-  $phpmailer->Host = 'smtp.mailtrap.io';
-  $phpmailer->SMTPAuth = true;
-  $phpmailer->Port = 2525;
-  $phpmailer->Username = 'e6e50f29dbe2dd';
-  $phpmailer->Password = 'f1ea173da928d9';
-}
+// function mailtrap($phpmailer) {
+//   $phpmailer->isSMTP();
+//   $phpmailer->Host = 'smtp.mailtrap.io';
+//   $phpmailer->SMTPAuth = true;
+//   $phpmailer->Port = 2525;
+//   $phpmailer->Username = 'e6e50f29dbe2dd';
+//   $phpmailer->Password = 'f1ea173da928d9';
+// }
 
-add_action('phpmailer_init', 'mailtrap');
+// add_action('phpmailer_init', 'mailtrap');
 
 // Bugs send emails WP 4.6.1
 add_filter('wp_mail_from', function() {
