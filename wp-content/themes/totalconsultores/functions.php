@@ -21,7 +21,7 @@ add_action('wp_enqueue_scripts', 'load_custom_scripts');
 /* Add Theme Support */
 /****************************************/
 if ( function_exists('add_theme_support') ) {
-  add_theme_support('post-thumbnails', array('post', 'page', 'sliders', 'parallaxs', 'customers'));
+  add_theme_support('post-thumbnails', array('post', 'page', 'sliders', 'parallaxs', 'customers', 'projects'));
 }
 
 /****************************************/
@@ -42,7 +42,8 @@ add_action('after_setup_theme', 'my_theme_setup');
 /****************************************/
 function register_my_menus() {
   register_nav_menus([
-    'main-menu' => __( 'Main Menu', THEMEDOMAIN ),
+    'main-menu' => __('Main Menu', THEMEDOMAIN),
+    'project-menu' => __('Project Menu', THEMEDOMAIN)
   ]);
 }
 

@@ -452,6 +452,65 @@ class Tc_Manager_Admin
     }
     
     /**
+     * Registers the meta box that will be used to display all of the post meta data
+     * associated with post type projects.
+     */
+    public function cd_mb_projects_add()
+    {
+        add_meta_box(
+            'mb-projects-id', 'Configuraciones', array($this, 'render_mb_projects'), 'projects', 'normal', 'core'
+        );
+    }
+
+    public function cd_mb_projects_save($post_id)
+    {
+        // Bail if we're doing an auto save
+        if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+            return;
+        }
+
+        // if our nonce isn't there, or we can't verify it, bail
+        if (!isset($_POST['meta_box_nonce']) || !wp_verify_nonce($_POST['meta_box_nonce'], 'projects_meta_box_nonce')) {
+            return;
+        }
+
+        // if our current user can't edit this post, bail
+        if (!current_user_can('edit_post', $post_id)) {
+            return;
+        }
+        
+        if (isset($_POST['mb_gallery'])) {
+            $gallery = $_POST['mb_gallery'];
+
+            $save = false;
+            $newArrGallery = array();
+
+            foreach ($gallery as $img) {
+                if (!empty($img)) {
+                    $save = true;
+                    $newArrGallery[] = $img;
+                }
+            }
+
+            if ($save) {
+                update_post_meta($post_id, 'mb_gallery', $newArrGallery);
+            } else {
+                delete_post_meta($post_id, 'mb_gallery');
+            }
+        } else {
+            delete_post_meta($post_id, 'mb_gallery');
+        }
+    }
+
+    /**
+     * Requires the file that is used to display the user interface of the post meta box.
+     */
+    public function render_mb_projects()
+    {
+        require_once plugin_dir_path(__FILE__) . 'partials/tc-mb-projects.php';
+    }
+    
+    /**
      * Add custom content type slides.
      */
     public function add_post_type()
@@ -685,6 +744,68 @@ class Tc_Manager_Admin
              'rewrite'     => false
         );
         register_post_type('customers', $args);
+        
+        $labels = array(
+            'name'               => __('Proyectos', $this->domain),
+            'singular_name'      => __('Proyecto', $this->domain),
+            'add_new'            => __('Nuevo proyecto', $this->domain),
+            'add_new_item'       => __('Agregar nuevo proyecto', $this->domain),
+            'edit_item'          => __('Editar proyecto', $this->domain),
+            'new_item'           => __('Nuevo proyecto', $this->domain),
+            'view_item'          => __('Ver proyecto', $this->domain),
+            'search_items'       => __('Buscar proyecto', $this->domain),
+            'not_found'          => __('Proyecto no encontrado', $this->domain),
+            'not_found_in_trash' => __('Proyecto no encontrado en la papelera', $this->domain),
+            'all_items'          => __('Todos los proyectos', $this->domain),
+//            'archives' - String for use with archives in nav menus. Default is Post Archives/Page Archives.
+//            'attributes' - Label for the attributes meta box. Default is 'Post Attributes' / 'Page Attributes'. 
+//            'insert_into_item' - String for the media frame button. Default is Insert into post/Insert into page.
+//            'uploaded_to_this_item' - String for the media frame filter. Default is Uploaded to this post/Uploaded to this page.
+//            'featured_image' - Default is Featured Image.
+//            'set_featured_image' - Default is Set featured image.
+//            'remove_featured_image' - Default is Remove featured image.
+//            'use_featured_image' - Default is Use as featured image.
+//            'menu_name' - Default is the same as `name`.
+//            'filter_items_list' - String for the table views hidden heading.
+//            'items_list_navigation' - String for the table pagination hidden heading.
+//            'items_list' - String for the table hidden heading.
+//            'name_admin_bar' - String for use in New in Admin menu bar. Default is the same as `singular_name`. 
+        );
+        $args = array(
+            'labels' => $labels,
+            'description' => 'Nuestro proyectos',
+             'public'              => true,
+            // 'exclude_from_search' => true,
+            // 'publicly_queryable' => false,
+            'show_ui' => true,
+            'show_in_nav_menus' => true,
+            'show_in_menu' => true,
+            'show_in_admin_bar' => true,
+            // 'menu_position'          => null,
+            'menu_icon' => 'dashicons-store',
+            // 'hierarchical'        => false,
+            'supports' => array(
+                'title',
+//                'editor',
+                'custom-fields',
+                'author',
+                'thumbnail',
+//                'page-attributes',
+                // 'excerpt'
+                // 'trackbacks'
+                // 'comments',
+                // 'revisions',
+                // 'post-formats'
+            ),
+            // 'taxonomies'  => array('post_tag', 'category'),
+             'has_archive' => true,
+             'rewrite'     => array(
+                 'slug' => 'proyectos'
+             )
+        );
+        register_post_type('projects', $args);
+        
+        flush_rewrite_rules();
     }
 
     public function unregister_post_type()
@@ -698,5 +819,47 @@ class Tc_Manager_Admin
         }
 
         return false;
+    }
+    
+    /**
+     * Add custom taxonomies types to post type projects.
+     */
+    public function add_taxonomies_projects()
+    {
+        $labels = array(
+            'name' => _x('Tipos de Proyectos', 'Taxonomy plural name', THEMEDOMAIN),
+            'singular_name' => _x('Tipo de Proyecto', 'Taxonomy singular name', THEMEDOMAIN),
+            'search_items' => __('Buscar Tipo de Proyecto', THEMEDOMAIN),
+            'popular_items' => __('Tipos de Proyectos Populares', THEMEDOMAIN),
+            'all_items' => __('Todas las Tipos de Proyectos', THEMEDOMAIN),
+            'parent_item' => __('Tipo de Proyecto Padre', THEMEDOMAIN),
+            'parent_item_colon' => __('Tipo de Proyecto Padre', THEMEDOMAIN),
+            'edit_item' => __('Editar Tipo de Proyecto', THEMEDOMAIN),
+            'update_item' => __('Actualizar Tipo de Proyecto', THEMEDOMAIN),
+            'add_new_item' => __('Añadir nuevo Tipo de Proyecto', THEMEDOMAIN),
+            'new_item_name' => __('Nuevo Tipo de Proyecto', THEMEDOMAIN),
+            'add_or_remove_items' => __('Añadir o eliminar Tipo de Proyecto', THEMEDOMAIN),
+            'choose_from_most_used' => __('Choose from most used text-domain', THEMEDOMAIN),
+            'menu_name' => __('Tipos de Proyectos', THEMEDOMAIN),
+        );
+
+        $args = array(
+            'labels' => $labels,
+            'public' => true,
+            'show_in_nav_menus' => true,
+            'show_in_menu' => true,
+            'show_admin_column' => true,
+            'hierarchical' => true,
+            'show_tagcloud' => false,
+            'show_ui' => true,
+            'query_var' => true,
+            'rewrite' => array(
+              'slug' => 'tipo-proyecto',
+            ),
+            'query_var' => true,
+//            'capabilities' => array(),
+        );
+
+        register_taxonomy('types', 'projects', $args);
     }
 }

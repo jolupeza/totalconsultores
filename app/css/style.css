@@ -556,11 +556,11 @@ a:hover, a:focus {
   color: #3b3b3b;
   display: inline-block;
 }
-.Page-nav-list li:hover {
+.Page-nav-list li.current-menu-item, .Page-nav-list li:hover {
   background-color: #fa5151;
   border-color: #fa5151;
 }
-.Page-nav-list li:hover a {
+.Page-nav-list li.current-menu-item a, .Page-nav-list li:hover a {
   color: white;
 }
 
