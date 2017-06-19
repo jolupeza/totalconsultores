@@ -237,6 +237,11 @@
 }
 .Page-single-category {
   font-size: 1.125em;
+  a {
+    &:hover {
+      color: $red;
+    }
+  }
 }
 .Page-single-figure {
   margin: 20px 0;

@@ -7,13 +7,19 @@
       <div class="container">
         <h2 class="Page-single-title text-title"><?php the_title(); ?></h2>
         <?php
-          $types = get_terms([
-            'taxonomy' => 'types'
-          ]);
+          $types = get_the_terms(get_the_id(), 'types');
 
           if (count($types) > 0) :
+            $i = 0;
+            $totalTypes = count($types);
         ?>
-          <h4 class="Page-single-category text-orange">Categoría: <?php echo $types[0]->name; ?></h4>
+          <h4 class="Page-single-category text-orange">Categoría:
+            <?php foreach ($types as $type) : ?>
+              <?php $i++; ?>
+              <a class="text-orange" href="<?php echo get_term_link($type); ?>"><?php echo $type->name; ?></a>
+              <?php if ($i < $totalTypes) : ?>, <?php endif; ?>
+            <?php endforeach; ?>
+          </h4>
         <?php endif; ?>
       </div>
 

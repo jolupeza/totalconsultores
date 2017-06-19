@@ -229,6 +229,26 @@ a:hover, a:focus {
   font-size: 1.125em;
   margin-top: 0;
 }
+.Carousel--project .carousel-indicators {
+  bottom: auto;
+  left: auto;
+  margin: 20px 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.Carousel--project .carousel-indicators li {
+  height: auto;
+  text-indent: unset;
+  width: 150px;
+}
+.Carousel--project .carousel-indicators li img {
+  width: 150px;
+}
+.Carousel--project .carousel-indicators li.active .img-thumbnail {
+  background-color: #ff6043;
+  border-color: #ff6043;
+}
 
 .Button {
   border: none;
@@ -596,6 +616,9 @@ a:hover, a:focus {
 
 .Page-single-category {
   font-size: 1.125em;
+}
+.Page-single-category a:hover {
+  color: #f22424;
 }
 
 .Page-single-figure {

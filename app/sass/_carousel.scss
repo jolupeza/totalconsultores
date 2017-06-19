@@ -35,4 +35,28 @@
       }
     }
   }
+  &--project {
+    .carousel-indicators {
+      bottom: auto;
+      left: auto;
+      margin: 20px 0;
+      position: relative;
+      text-align: center;
+      width: 100%;
+      li {
+        height: auto;
+        text-indent: unset;
+        width: 150px;
+        img {
+          width: 150px;
+        }
+        &.active {
+          .img-thumbnail {
+            background-color: $orange;
+            border-color: $orange;
+          }
+        }
+      }
+    }
+  }
 }

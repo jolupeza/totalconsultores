@@ -11,8 +11,9 @@ var j = jQuery.noConflict();
     j('.Header').affix({
       offset: {
         top: function () {
-          var nextElement = j('.Header').next();
-          return nextElement.outerHeight(true) / 4;
+          return 20;
+          // var nextElement = j('.Header').next();
+          // return nextElement.outerHeight(true) / 4;
         }
       }
     });
