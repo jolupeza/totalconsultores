@@ -4,7 +4,7 @@ body {
   color: $text-color;
   font-family: "montserratregular";
   font-size: 16px;
-  &.single-projects {
+  &.single-projects, &.tax-types {
     .MainMenu--black {
       li {
         &.menu-item-object-projects {
