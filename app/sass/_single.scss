@@ -1,0 +1,29 @@
+.Single-nav {
+  @include display-flex();
+  @include justify-content(space-between);
+}
+.Single-nav-pre, .Single-nav-next {
+  color: $blackSoft;
+  font-family: "montserratmedium";
+  font-size: 1.125em;
+  @include opacity(0.6);
+  i[class^="icon-"] {
+    font-size: 1.44em;
+    vertical-align: top;
+  }
+  i {
+    &.icon-arrow-circle-o-left {
+      margin-right: 15px;
+    }
+    &.icon-arrow-circle-o-right {
+      margin-left: 15px;
+    }
+  }
+  &:hover {
+    color: $blackSoft;
+    @include opacity(1);
+    i[class^="icon-"] {
+      color: $orange;
+    }
+  }
+}

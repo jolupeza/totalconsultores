@@ -79,8 +79,8 @@ a:hover, a:focus {
 }
 @font-face {
   font-family: 'icomoon';
-  src: url("./../fonts/icomoon.eot?s7nxcr");
-  src: url("./../fonts/icomoon.eot?s7nxcr#iefix") format("embedded-opentype"), url("./../fonts/icomoon.ttf?s7nxcr") format("truetype"), url("./../fonts/icomoon.woff?s7nxcr") format("woff"), url("./../fonts/icomoon.svg?s7nxcr#icomoon") format("svg");
+  src: url("./../fonts/icomoon.eot?jcscvr");
+  src: url("./../fonts/icomoon.eot?jcscvr#iefix") format("embedded-opentype"), url("./../fonts/icomoon.ttf?jcscvr") format("truetype"), url("./../fonts/icomoon.woff?jcscvr") format("woff"), url("./../fonts/icomoon.svg?jcscvr#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -96,6 +96,22 @@ a:hover, a:focus {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-circle-o-left:before {
+  content: "\e904";
+}
+
+.icon-arrow-circle-o-right:before {
+  content: "\e905";
+}
+
+.icon-keyboard_arrow_right:before {
+  content: "\e902";
+}
+
+.icon-keyboard_arrow_left:before {
+  content: "\e903";
 }
 
 .icon-search:before {
@@ -248,6 +264,34 @@ a:hover, a:focus {
 .Carousel--project .carousel-indicators li.active .img-thumbnail {
   background-color: #ff6043;
   border-color: #ff6043;
+}
+.Carousel--project .carousel-control {
+  background-image: none;
+  bottom: auto;
+  color: white;
+  font-size: 5em;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  text-shadow: none;
+  top: 35%;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  width: auto;
+}
+.Carousel--project .carousel-control.left {
+  left: 20px;
+}
+.Carousel--project .carousel-control.right {
+  right: 20px;
+}
+.Carousel--project .carousel-control:hover {
+  color: #ff6043;
+}
+.Carousel--project:hover .carousel-control {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
 }
 
 .Button {
@@ -795,4 +839,37 @@ a:hover, a:focus {
   font-family: "montserratsemibold";
   font-size: 1.75em;
   margin-top: 0;
+}
+
+.Single-nav {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.Single-nav-pre, .Single-nav-next {
+  color: #333333;
+  font-family: "montserratmedium";
+  font-size: 1.125em;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+}
+.Single-nav-pre i[class^="icon-"], .Single-nav-next i[class^="icon-"] {
+  font-size: 1.44em;
+  vertical-align: top;
+}
+.Single-nav-pre i.icon-arrow-circle-o-left, .Single-nav-next i.icon-arrow-circle-o-left {
+  margin-right: 15px;
+}
+.Single-nav-pre i.icon-arrow-circle-o-right, .Single-nav-next i.icon-arrow-circle-o-right {
+  margin-left: 15px;
+}
+.Single-nav-pre:hover, .Single-nav-next:hover {
+  color: #333333;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+.Single-nav-pre:hover i[class^="icon-"], .Single-nav-next:hover i[class^="icon-"] {
+  color: #ff6043;
 }

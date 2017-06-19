@@ -58,5 +58,30 @@
         }
       }
     }
+    .carousel-control {
+      background-image: none;
+      bottom: auto;
+      color: white;
+      font-size: 5em;
+      @include opacity(0);
+      @include text-shadow(none);
+      top: 35%;
+      @include transition(all 0.2s ease);
+      width: auto;
+      &.left {
+        left: 20px;
+      }
+      &.right {
+        right: 20px;
+      }
+      &:hover {
+        color: $orange;
+      }
+    }
+    &:hover {
+      .carousel-control {
+        @include opacity(1);
+      }
+    }
   }
 }

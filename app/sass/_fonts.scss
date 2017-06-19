@@ -48,11 +48,11 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('./../fonts/icomoon.eot?s7nxcr');
-  src:  url('./../fonts/icomoon.eot?s7nxcr#iefix') format('embedded-opentype'),
-    url('./../fonts/icomoon.ttf?s7nxcr') format('truetype'),
-    url('./../fonts/icomoon.woff?s7nxcr') format('woff'),
-    url('./../fonts/icomoon.svg?s7nxcr#icomoon') format('svg');
+  src:  url('./../fonts/icomoon.eot?jcscvr');
+  src:  url('./../fonts/icomoon.eot?jcscvr#iefix') format('embedded-opentype'),
+    url('./../fonts/icomoon.ttf?jcscvr') format('truetype'),
+    url('./../fonts/icomoon.woff?jcscvr') format('woff'),
+    url('./../fonts/icomoon.svg?jcscvr#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -72,6 +72,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-arrow-circle-o-left:before {
+  content: "\e904";
+}
+.icon-arrow-circle-o-right:before {
+  content: "\e905";
+}
+.icon-keyboard_arrow_right:before {
+  content: "\e902";
+}
+.icon-keyboard_arrow_left:before {
+  content: "\e903";
+}
 .icon-search:before {
   content: "\e901";
 }
