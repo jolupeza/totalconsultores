@@ -23,20 +23,107 @@
         <?php endif; ?>
       </div>
 
-      <?php if (has_post_thumbnail()) : ?>
-        <figure class="Page-single-figure">
-          <?php the_post_thumbnail('full', ['class' => 'img-responsive center-block']); ?>
-        </figure>
+      <?php
+        $values = get_post_custom(get_the_id());
+        $gallery = isset($values['mb_gallery']) ? $values['mb_gallery'][0] : '';
+        $i = 0; $j = 0;
+
+        if (!empty($gallery)) :
+          $gallery = unserialize($gallery);
+          $thumb = false;
+          $galleryIds = array();
+
+          if (count($gallery)) :
+      ?>
+          <section id="carousel-project" class="carousel slide Carousel Carousel--project Page-single-figure" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+              <?php if (has_post_thumbnail()) : ?>
+                <?php $thumb = true; ?>
+                <div class="item active">
+                  <?php the_post_thumbnail('full', ['class' => 'img-responsive center-block']); ?>
+                </div>
+              <?php endif; ?>
+
+              <?php foreach ($gallery as $image) : ?>
+                <?php
+                  global $wpdb;
+                  $idImage = $wpdb->get_col("SELECT ID FROM $wpdb->posts WHERE guid = '$image' AND post_type = 'attachment'");
+                  $galleryIds[] = $idImage[0];
+                ?>
+              <?php endforeach; ?>
+
+              <?php foreach ($galleryIds as $idImage) : ?>
+                <?php
+                  $image = wp_get_attachment_image_src((int)$idImage, 'full');
+
+                  $active = ($i === 0) && !$thumb ? ' active' : '';
+                ?>
+                <div class="item<?php echo $active; ?>">
+                  <img class="img-responsive center-block" src="<?php echo $image[0]; ?>" />
+                </div>
+                <?php $i++; ?>
+              <?php endforeach; ?>
+            </div>
+
+            <ol class="carousel-indicators">
+              <?php if (has_post_thumbnail()) : ?>
+                <li data-target="#carousel-project" data-slide-to="0" class="active">
+                  <?php the_post_thumbnail('thumbnail', ['class' => 'img-responsive img-thumbnail']); ?>
+                </li>
+              <?php endif; ?>
+
+              <?php foreach ($galleryIds as $idImage) : ?>
+                <?php
+                  $image = wp_get_attachment_image_src((int)$idImage, 'thumbnail');
+                  $active = (!$thumb && $j === 0) ? 'class="active"' : '';
+                  $index = ($thumb) ? $j + 1 : $j;
+                ?>
+                <li data-target="#carousel-project" data-slide-to="<?php echo $index; ?>"<?php echo $active; ?>>
+                  <img src="<?php echo $image[0]; ?>" class="img-responsive img-thumbnail">
+                </li>
+                <?php $j++; ?>
+              <?php endforeach; ?>
+            </ol>
+
+            <a class="left carousel-control" href="#carousel-project" role="button" data-slide="prev">
+              <i class="icon-keyboard_arrow_left"></i>
+            </a>
+            <a class="right carousel-control" href="#carousel-project" role="button" data-slide="next">
+              <i class="icon-keyboard_arrow_right"></i>
+            </a>
+          </section>
+        <?php endif; ?>
+      <?php else : ?>
+        <?php if (has_post_thumbnail()) : ?>
+          <figure class="Page-single-figure">
+            <?php the_post_thumbnail('full', ['class' => 'img-responsive center-block']); ?>
+          </figure>
+        <?php endif; ?>
       <?php endif; ?>
 
       <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <?php the_content(); ?>
+        <?php the_content(); ?>
 
-            <hr class="Hr">
-          </div>
-        </div>
+        <hr class="Hr">
+
+        <?php
+          $prevPost = get_previous_post();
+          $nextPost = get_next_post();
+        ?>
+
+        <nav class="Single-nav">
+          <?php if (is_object($prevPost)) : ?>
+            <a href="<?php echo get_permalink($prevPost); ?>" class="Single-nav-pre"><i class="icon-arrow-circle-o-left"></i> <?php echo $prevPost->post_title; ?></a>
+          <?php else : ?>
+            <span>&nbsp;</span>
+          <?php endif; ?>
+
+          <?php if (is_object($nextPost)) : ?>
+            <a href="<?php echo get_permalink($nextPost); ?>" class="Single-nav-next"><?php echo $nextPost->post_title; ?> <i class="icon-arrow-circle-o-right"></i></a>
+          <?php else : ?>
+            <span>&nbsp;</span>
+          <?php endif; ?>
+        </nav>
       </div>
     </section>
   <?php endwhile; ?>

@@ -4,22 +4,22 @@ body {
   font-family: "montserratregular";
   font-size: 16px;
 }
-body.single-projects .MainMenu--black li.menu-item-object-projects a {
+body.single-projects .MainMenu--black li.menu-item-object-projects a, body.tax-types .MainMenu--black li.menu-item-object-projects a {
   border-bottom: 4px solid #fa5151;
 }
-body.single-projects .MainMenu--black li a {
+body.single-projects .MainMenu--black li a, body.tax-types .MainMenu--black li a {
   color: #333333;
 }
-body.single-projects .MainMenu--black li a:hover {
+body.single-projects .MainMenu--black li a:hover, body.tax-types .MainMenu--black li a:hover {
   border-bottom: 4px solid #fa5151;
 }
-body.single-projects .Header.affix .MainMenu--black li.menu-item-object-projects a {
+body.single-projects .Header.affix .MainMenu--black li.menu-item-object-projects a, body.tax-types .Header.affix .MainMenu--black li.menu-item-object-projects a {
   border-bottom: 4px solid white;
 }
-body.single-projects .Header.affix .MainMenu--black li a {
+body.single-projects .Header.affix .MainMenu--black li a, body.tax-types .Header.affix .MainMenu--black li a {
   color: white;
 }
-body.single-projects .Header.affix .MainMenu--black li a:hover {
+body.single-projects .Header.affix .MainMenu--black li a:hover, body.tax-types .Header.affix .MainMenu--black li a:hover {
   border-bottom: 4px solid white;
 }
 
