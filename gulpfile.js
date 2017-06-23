@@ -46,7 +46,14 @@ gulp.task('inject', function () {
 gulp.task('uncss', ['compress'], function () {
   return gulp.src('./wp-content/themes/totalconsultores/css/style.min.css')
             .pipe(uncss({
-              html: ['./app/index.html', './app/about.html', './app/proyectos.html', './app/detail-project.html']
+              html: [
+                './app/index.html',
+                './app/about.html',
+                './app/proyectos.html',
+                './app/detail-project.html',
+                './app/blog.html',
+                './app/single.html'
+              ]
             }))
             .pipe(gulp.dest('./wp-content/themes/totalconsultores/css'));
 });

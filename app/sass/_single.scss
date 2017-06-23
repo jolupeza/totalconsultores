@@ -27,3 +27,33 @@
     }
   }
 }
+.Single-tags {
+  @include display-flex();
+  margin: 25px 0;
+}
+.Single-tags-title {
+  color: $blackSoft;
+  font-family: "montserratmedium";
+  font-size: 1.125em;
+  margin: 0 10px 0 0;
+}
+.Single-tags-list {
+  @include display-flex();
+  margin-bottom: 0;
+  padding-left: 0;
+  li {
+    font-family: "montserratmedium";
+    font-size: 1.125em;
+    list-style: none;
+    margin-right: 15px;
+    &:last-child {
+      margin-right: 0;
+    }
+    a {
+      color: $blackSoft;
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+}

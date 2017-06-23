@@ -1,0 +1,46 @@
+.Sidebar {
+
+}
+.Sidebar-widget {
+  margin-bottom: 25px;
+}
+.Sidebar-title {
+  border-bottom: 2px solid #c9c9c9;
+  color: $blackSoft;
+  font-family: "montserratmedium";
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  margin-top: 0;
+  padding-bottom: 5px;
+  position: relative;
+  &::after {
+    background-color: $orange;
+    bottom: -2px;
+    content: "";
+    display: block;
+    height: 2px;
+    position: absolute;
+    width: 90px;
+  }
+}
+.Sidebar-related {
+  @include display-flex();
+  margin-bottom: 20px;
+}
+.Sidebar-related-figure {
+  margin-right: 15px;
+  width: 150px;
+}
+.Sidebar-related-content {
+
+}
+.Sidebar-related-content-title {
+  font-family: "montserratmedium";
+  font-size: 1.125em;
+  a {
+    color: $blackSoft;
+    &:hover {
+      color: $orange;
+    }
+  }
+}
