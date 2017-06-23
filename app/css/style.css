@@ -140,7 +140,7 @@ a:hover, a:focus {
 .Header.affix {
   background-color: #fa5151;
 }
-.Header.affix .MainMenu--black li.current-menu-item a, .Header.affix .MainMenu--black li.active a {
+.Header.affix .MainMenu--black li.current-menu-item a, .Header.affix .MainMenu--black li.current-menu-parent a, .Header.affix .MainMenu--black li.active a {
   border-bottom: 4px solid white;
 }
 .Header.affix .MainMenu--black li a {
@@ -176,7 +176,7 @@ a:hover, a:focus {
   font-family: "montserratmedium";
   padding: 0 20px;
 }
-.MainMenu li.current-menu-item a, .MainMenu li.active a {
+.MainMenu li.current-menu-item a, .MainMenu li.current-menu-parent a, .MainMenu li.active a {
   border-bottom: 4px solid white;
 }
 .MainMenu li a {
@@ -195,7 +195,7 @@ a:hover, a:focus {
 .MainMenu li a:focus {
   text-decoration: none;
 }
-.MainMenu--black li.current-menu-item a, .MainMenu--black li.active a {
+.MainMenu--black li.current-menu-item a, .MainMenu--black li.current-menu-parent a, .MainMenu--black li.active a {
   border-bottom: 4px solid #fa5151;
 }
 .MainMenu--black li a {
@@ -948,12 +948,19 @@ a:hover, a:focus {
 .Sidebar-related {
   display: -webkit-flex;
   display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
 .Sidebar-related-figure {
-  margin-right: 15px;
-  width: 150px;
+  -webkit-flex: 0 1 45%;
+  flex: 0 1 45%;
+}
+
+.Sidebar-related-content {
+  -webkit-flex: 0 1 50%;
+  flex: 0 1 50%;
 }
 
 .Sidebar-related-content-title {

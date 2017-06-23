@@ -25,14 +25,14 @@
 }
 .Sidebar-related {
   @include display-flex();
+  @include justify-content(space-between);
   margin-bottom: 20px;
 }
 .Sidebar-related-figure {
-  margin-right: 15px;
-  width: 150px;
+  @include flex(0 1 45%);
 }
 .Sidebar-related-content {
-
+  @include flex(0 1 50%);
 }
 .Sidebar-related-content-title {
   font-family: "montserratmedium";

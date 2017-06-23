@@ -55,6 +55,23 @@ function register_my_menus() {
 add_action('init', 'register_my_menus');
 
 /****************************************/
+/* Add Sidebar Support */
+/****************************************/
+if (function_exists('register_sidebar')) {
+  register_sidebar([
+    'name'          => __('Main Sidebar', THEMEDOMAIN),
+    'id'            => 'main-sidebar',
+    'description'   => __('Área Sidebar Principal', THEMEDOMAIN),
+    'class'         => '',
+    'before_widget' => '<div class="Sidebar-widget">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3 class="Sidebar-title">',
+    'after_title'   => '</h3>'
+    ]
+  );
+}
+
+/****************************************/
 /* Setting Mailtrap */
 /****************************************/
 // function mailtrap($phpmailer) {
@@ -175,6 +192,7 @@ function register_contact_callback()
 /* Load Theme Options Page and Custom Widgets */
 /**********************************************/
 require_once(TEMPLATEPATH . '/functions/tc-theme-customizer.php');
+require_once(TEMPLATEPATH . '/functions/widget-tc-posts-related.php');
 
 /*
  * Dump helper. Functions to dump variables to the screen, in a nicley formatted manner.

@@ -13,7 +13,7 @@
     background-color: $redSoft;
     .MainMenu--black {
       li {
-        &.current-menu-item, &.active {
+        &.current-menu-item, &.current-menu-parent, &.active {
           a {
             border-bottom: 4px solid white;
           }
