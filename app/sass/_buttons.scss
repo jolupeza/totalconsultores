@@ -19,11 +19,23 @@
   &--white {
     background-color: #fff;
   }
+  &--transparent {
+    border: 1px solid white;
+    color: white;
+    &:hover {
+      background-color: $orange;
+      border-color: $orange;
+      color: white;
+    }
+  }
   i[class^="icon-"] {
     vertical-align: middle;
   }
   &--normal {
     font-size: 1em;
+  }
+  &--small {
+    padding: 10px 15px;
   }
 }
 .Arrow {

@@ -1,0 +1,33 @@
+.Blog {
+  @include display-flex();
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+}
+.Blog-item {
+  @include flex(0 1 49%);
+  margin-bottom: 15px;
+}
+.Blog-item-figure {
+  position: relative;
+}
+.Blog-item-content {
+  background-color: rgba(black, 0.25);
+  height: 100%;
+  padding: 15px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  p {
+    color: white;
+    font-family: "montserratlight";
+    font-size: 0.875em;
+    @include text-shadow(rgba(black, 0.9) 1px 1px 2px);
+  }
+}
+.Blog-title {
+  color: white;
+  font-family: "montserratmedium";
+  font-size: 1.125em;
+  margin-top: 0;
+  @include text-shadow(rgba(black, 0.9) 1px 1px 2px);
+}

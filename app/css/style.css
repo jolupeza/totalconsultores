@@ -319,11 +319,23 @@ a:hover, a:focus {
 .Button--white {
   background-color: #fff;
 }
+.Button--transparent {
+  border: 1px solid white;
+  color: white;
+}
+.Button--transparent:hover {
+  background-color: #ff6043;
+  border-color: #ff6043;
+  color: white;
+}
 .Button i[class^="icon-"] {
   vertical-align: middle;
 }
 .Button--normal {
   font-size: 1em;
+}
+.Button--small {
+  padding: 10px 15px;
 }
 
 .Arrow {
@@ -953,4 +965,46 @@ a:hover, a:focus {
 }
 .Sidebar-related-content-title a:hover {
   color: #ff6043;
+}
+
+.Blog {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.Blog-item {
+  -webkit-flex: 0 1 49%;
+  flex: 0 1 49%;
+  margin-bottom: 15px;
+}
+
+.Blog-item-figure {
+  position: relative;
+}
+
+.Blog-item-content {
+  background-color: rgba(0, 0, 0, 0.25);
+  height: 100%;
+  padding: 15px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.Blog-item-content p {
+  color: white;
+  font-family: "montserratlight";
+  font-size: 0.875em;
+  text-shadow: rgba(0, 0, 0, 0.9) 1px 1px 2px;
+}
+
+.Blog-title {
+  color: white;
+  font-family: "montserratmedium";
+  font-size: 1.125em;
+  margin-top: 0;
+  text-shadow: rgba(0, 0, 0, 0.9) 1px 1px 2px;
 }
