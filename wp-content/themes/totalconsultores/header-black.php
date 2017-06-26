@@ -29,7 +29,7 @@
     <header class="Header Header--black">
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-3 col-xs-10">
             <?php
               $options = get_option('tc_custom_settings');
               $logo = (isset($options['logo_black']) && !empty($options['logo_black'])) ? esc_attr($options['logo_black']) : IMAGES . '/logo-black.png';
@@ -40,7 +40,7 @@
               </a>
             </h1>
           </div>
-          <div class="col-md-9">
+          <div class="col-md-9 hidden-sm hidden-xs">
             <?php
               $args = [
                 'theme_location' => 'main-menu',
@@ -52,6 +52,17 @@
               wp_nav_menu($args);
             ?>
           </div>
+          <div class="col-xs-2 visible-sm-block visible-xs-block">
+            <aside class="Header-toggle text-right">
+              <i class="icon-bars js-toggle-slidebar"></i>
+            </aside>
+          </div>
         </div>
       </div>
     </header>
+
+    <?php
+      if (file_exists(TEMPLATEPATH . '/partials/slidebar.php')) {
+        include TEMPLATEPATH . '/partials/slidebar.php';
+      }
+    ?>

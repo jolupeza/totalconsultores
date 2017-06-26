@@ -11,7 +11,7 @@
 
     <?php
         $values = get_post_custom( get_the_ID() );
-//        $responsive = isset( $values['mb_responsive'] ) ? esc_attr($values['mb_responsive'][0]) : '';
+        $responsive = isset( $values['mb_responsive'] ) ? esc_attr($values['mb_responsive'][0]) : '';
 //        $carrera = isset($values['mb_carrera']) ? esc_attr($values['mb_carrera'][0]) : '';
         $title = isset($values['mb_title']) ? esc_attr($values['mb_title'][0]) : '';
         $subtitle = isset($values['mb_subtitle']) ? esc_attr($values['mb_subtitle'][0]) : '';
@@ -78,7 +78,7 @@
 
         </select>
     </p>
-
+ */ ?>
     <fieldset class="GroupForm">
         <legend class="GroupForm-legend">Imagen Responsive</legend>
 
@@ -101,5 +101,4 @@
         </div>
 
     </fieldset>
- */ ?>
 </div><!-- #single-post-meta-manager -->

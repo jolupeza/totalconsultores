@@ -168,14 +168,14 @@ class Tc_Manager_Admin
             update_post_meta($post_id, 'mb_carrera', esc_attr($_POST['mb_carrera']));
         } else {
             delete_post_meta($post_id, 'mb_carrera');
-        }
+        }*/
 
         // Image Responsive
         if (isset($_POST['mb_responsive']) && !empty($_POST['mb_responsive'])) {
             update_post_meta($post_id, 'mb_responsive', esc_attr($_POST['mb_responsive']));
         } else {
             delete_post_meta($post_id, 'mb_responsive');
-        }*/
+        }
     }
 
     /**

@@ -29,7 +29,7 @@
     <header class="Header">
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-3 col-xs-10">
             <?php
               $customLogoId = get_theme_mod('custom_logo');
               $logo = wp_get_attachment_image_src($customLogoId, 'full');
@@ -40,7 +40,7 @@
               </a>
             </h1>
           </div>
-          <div class="col-md-9">
+          <div class="col-md-9 hidden-sm hidden-xs">
             <?php
               $args = [
                 'theme_location' => 'main-menu',
@@ -52,6 +52,17 @@
               wp_nav_menu($args);
             ?>
           </div>
+          <div class="col-xs-2 visible-sm-block visible-xs-block">
+            <aside class="Header-toggle text-right">
+              <i class="icon-bars js-toggle-slidebar"></i>
+            </aside>
+          </div>
         </div>
       </div>
     </header>
+
+    <?php
+      if (file_exists(TEMPLATEPATH . '/partials/slidebar.php')) {
+        include TEMPLATEPATH . '/partials/slidebar.php';
+      }
+    ?>

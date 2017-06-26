@@ -12,8 +12,6 @@ var j = jQuery.noConflict();
       offset: {
         top: function () {
           return 20;
-          // var nextElement = j('.Header').next();
-          // return nextElement.outerHeight(true) / 4;
         }
       }
     });
@@ -130,6 +128,17 @@ var j = jQuery.noConflict();
       }, 'json').fail(function(){
         alert('No se pudo realizar la operación solicitada. Por favor vuelva a intentarlo.');
       });
+    });
+
+    j('.js-toggle-slidebar').on('click', function(ev) {
+      ev.preventDefault();
+      var slidebar = j('.Slidebar');
+
+      if (slidebar.hasClass('active')) {
+        slidebar.removeClass('active');
+      } else {
+        slidebar.addClass('active');
+      }
     });
   });
 })(jQuery);

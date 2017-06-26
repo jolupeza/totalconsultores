@@ -399,6 +399,11 @@ a:hover, a:focus {
   display: block;
   font-size: 2em;
 }
+@media screen and (max-width: 991px) {
+  .Arrow {
+    bottom: 20px;
+  }
+}
 
 .ArrowTop {
   -moz-animation-duration: 3s;
@@ -924,6 +929,11 @@ a:hover, a:focus {
 .Contact-map-figure {
   height: 100%;
 }
+@media screen and (max-width: 767px) {
+  .Contact-map-figure {
+    height: 350px;
+  }
+}
 
 @media screen and (max-width: 767px) {
   .Contact-map {
@@ -935,6 +945,11 @@ a:hover, a:focus {
 .Contact-form {
   background-color: #111015;
   padding: 80px 12%;
+}
+@media screen and (max-width: 991px) {
+  .Contact-form {
+    padding: 50px;
+  }
 }
 @media screen and (max-width: 767px) {
   .Contact-form {

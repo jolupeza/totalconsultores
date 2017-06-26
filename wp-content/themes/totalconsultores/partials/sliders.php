@@ -24,16 +24,22 @@
           $url = isset($values['mb_url']) ? esc_attr($values['mb_url'][0]) : '';
           $target = isset($values['mb_target']) ? esc_attr($values['mb_target'][0]) : '';
           $target = (!empty($target) && $target === 'on') ? ' target="_blank" rel="noopener noreferrer"' : '';
+          $responsive = isset( $values['mb_responsive'] ) ? esc_attr($values['mb_responsive'][0]) : '';
         ?>
 
         <div class="item<?php echo ($i === 0) ? ' active' : ''; ?>">
           <?php if (has_post_thumbnail()) : ?>
-            <?php
-              the_post_thumbnail('full', [
-                'class' => 'img-responsive center-block',
-                'alt' => get_the_title()
-              ]);
-            ?>
+            <picture>
+              <?php if (!empty($responsive)) : ?>
+                <source class="img-responsive center-block" media="(max-width: 767px) and (orientation: portrait)" srcset="<?php echo $responsive; ?>" alt="<?php echo get_the_title(); ?>" />
+              <?php endif; ?>
+              <?php
+                the_post_thumbnail('full', [
+                  'class' => 'img-responsive center-block',
+                  'alt' => get_the_title()
+                ]);
+              ?>
+            </picture>
           <?php endif; ?>
           <div class="carousel-caption">
             <?php if (!empty($subtitle)) : ?><h3><?php echo $subtitle; ?></h3><?php endif; ?>

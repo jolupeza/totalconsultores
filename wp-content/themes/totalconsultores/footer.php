@@ -54,27 +54,29 @@
         </div>
 
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-8">
             <p class="Footer-text"><?php bloginfo('description'); ?></p>
           </div>
-          <div class="col-md-4"></div>
-          <div class="col-md-4">
-            <?php if (!empty($options['phone'])) : ?>
-              <p class="Footer-text text-right"><?php echo $options['phone']; ?></p>
-            <?php endif; ?>
-            <?php if (!empty($options['email'])) : ?>
-              <p class="Footer-text text-right"><?php echo $options['email']; ?></p>
-            <?php endif; ?>
+          <div class="col-md-4 hidden-sm hidden-xs"></div>
+          <div class="col-md-4 col-sm-4">
+            <article class="Footer-info">
+              <?php if (!empty($options['phone'])) : ?>
+                <p class="Footer-text text-right"><?php echo $options['phone']; ?></p>
+              <?php endif; ?>
+              <?php if (!empty($options['email'])) : ?>
+                <p class="Footer-text text-right"><?php echo $options['email']; ?></p>
+              <?php endif; ?>
+            </article>
           </div>
         </div>
 
         <hr class="Footer-separator">
 
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-sm-6">
             <p class="Footer-text">&copy; <?php echo date('Y'); ?> Derechos Reservados</p>
           </div>
-          <div class="col-md-6">
+          <div class="col-sm-6">
             <?php if ($options['display_social_link'] && !is_null($options['display_social_link'])) : ?>
               <ul class="text-right list-inline Footer-social">
                 <?php if (!empty($options['facebook'])) : ?>

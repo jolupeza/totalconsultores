@@ -12,6 +12,9 @@
 }
 .Contact-map-figure {
   height: 100%;
+  @media screen and (max-width: 767px) {
+    height: 350px;
+  }
 }
 .Contact-map {
   @media screen and (max-width: 767px) {
@@ -21,6 +24,9 @@
 .Contact-form {
   background-color: $black;
   padding: 80px 12%;
+  @media screen and (max-width: 991px) {
+    padding: 50px;
+  }
   @media screen and (max-width: 767px) {
     @include order(0);
     padding: 50px 25px;
