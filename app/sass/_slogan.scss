@@ -1,6 +1,16 @@
 .Slogan {
   background-color: $orange;
-  padding: 50px;
+  @include display-flex();
+  @include align-items(center);
+  padding: 50px 0;
+}
+.Slogan-content {
+  @include display-flex();
+  @include align-content(center);
+  @include flex-wrap(wrap);
+  height: 100%;
+  margin-left: 10%;
+  width: 80%;
 }
 .Slogan-subtitle, .Slogan-title {
   color: white;
@@ -9,8 +19,14 @@
 .Slogan-subtitle {
   font-family: "montserratlight";
   font-size: 3em;
+  @media screen and (max-width: 991px) {
+    font-size: 1.5em;
+  }
 }
 .Slogan-title {
   font-family: "montserratsemibold";
   font-size: 4em;
+  @media screen and (max-width: 991px) {
+    font-size: 2.5em;
+  }
 }

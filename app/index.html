@@ -27,14 +27,14 @@
     <header class="Header">
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-3 col-xs-10">
             <h1 class="Header-logo">
               <a href="index.html" title="Total Consultores S.A.C">
                 <img src="images/logo.png" alt="Total Consultores S.A.C." class="img-responsive center-block" />
               </a>
             </h1>
           </div>
-          <div class="col-md-9">
+          <div class="col-md-9 hidden-sm hidden-xs">
             <menu class="Header-menu">
               <ul class="MainMenu">
                 <li class="active"><a href="index.html">Inicio</a></li>
@@ -45,9 +45,41 @@
               </ul>
             </menu>
           </div>
+          <div class="col-xs-2 visible-sm-block visible-xs-block">
+            <aside class="Header-toggle text-right"><i class="icon-bars"></i></aside>
+          </div>
         </div>
       </div>
     </header>
+
+    <section class="Slidebar">
+      <aside class="Slidebar-close js-toglle-slidebar">
+        <i class="icon-close"></i>
+      </aside>
+
+      <article class="Slidebar-content">
+        <menu class="Header-menu">
+          <ul class="MainMenu">
+            <li class="active"><a href="index.html">Inicio</a></li>
+            <li><a href="about.html">Conócenos</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="blog.html">Totalnews</a></li>
+            <li><a href="">Contacto</a></li>
+          </ul>
+        </menu>
+
+        <article class="Slidebar-info">
+          <p class="Slidebar-text text-center">(+511) 123-4567</p>
+          <p class="Slidebar-text text-center">hola@totalconsultores.com</p>
+        </article>
+
+        <ul class="Slidebar-social">
+          <li class="Slidebar-social-item"><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li class="Slidebar-social-item"><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li class="Slidebar-social-item"><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        </ul>
+      </article>
+    </section>
 
     <section id="carousel-home" class="carousel slide Carousel Carousel--home" data-ride="carousel">
       <!-- <ol class="carousel-indicators">
@@ -58,7 +90,10 @@
 
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img src="images/slide-home-1.jpg" alt="Slide Home 01" />
+          <picture>
+            <source class="img-responsive center-block" media="(max-width: 767px) and (orientation: portrait)" srcset="./images/slide-home-responsive.jpg" alt="" />
+            <img class="img-responsive center-block" src="images/slide-home-1.jpg" alt="Slide Home 01" />
+          </picture>
           <div class="carousel-caption">
             <h3>Suéñalo</h3>
             <h2>Lo hacemos!</h2>
@@ -87,7 +122,7 @@
       </a> -->
     </section>
 
-    <section class="Services">
+    <section class="Services hidden-xs hidden-sm">
       <article class="Services-item">
         <img src="images/cultural.jpg" alt="" class="Services-bg img-responsive" />
         <aside class="Services-title text-uppercase"><h3 class="text-center">Cultural.</h3></aside>
@@ -120,8 +155,7 @@
       </div>
     </section>
 
-    <section class="Parallax">
-      <img src="images/parallax.jpg" class="img-responsive center-block" alt="" />
+    <section class="Parallax" style="background-image: url('./images/parallax.jpg');">
       <article class="Parallax-caption">
         <h3 class="Parallax-subtitle">Tenemos una pasión en</h3>
         <h2 class="Parallax-title">construir espacios únicos</h2>
@@ -167,13 +201,9 @@
     </section>
 
     <section class="Slogan">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <h3 class="Slogan-subtitle">Tenemos una pasión en</h3>
-            <h2 class="Slogan-title">construir espacios únicos</h2>
-          </div>
-        </div>
+      <div class="Slogan-content">
+        <h3 class="Slogan-subtitle">Tenemos una pasión en</h3>
+        <h2 class="Slogan-title">construir espacios únicos</h2>
       </div>
     </section>
 
@@ -215,23 +245,25 @@
         </h1>
 
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-8">
             <p class="Footer-text">Somos una consultora con más de 10 años de experiencia en temas de construcción civil y arquitectura.</p>
           </div>
-          <div class="col-md-4"></div>
-          <div class="col-md-4">
-            <p class="Footer-text text-right">(+511) 123-4567</p>
-            <p class="Footer-text text-right">hola@totalconsultores.com</p>
+          <div class="col-md-4 hidden-sm hidden-xs"></div>
+          <div class="col-md-4 col-sm-4">
+            <article class="Footer-info">
+              <p class="Footer-text text-right">(+511) 123-4567</p>
+              <p class="Footer-text text-right">hola@totalconsultores.com</p>
+            </article>
           </div>
         </div>
 
         <hr class="Footer-separator">
 
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-sm-6">
             <p class="Footer-text">&copy; 2017 Derechos Reservados</p>
           </div>
-          <div class="col-md-6">
+          <div class="col-sm-6">
             <ul class="text-right list-inline Footer-social">
               <li class="Footer-social-item"><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
               <li class="Footer-social-item"><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>

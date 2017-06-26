@@ -1,0 +1,90 @@
+.Slidebar {
+  background-color: rgba($redSoft, 0.9);
+  height: 100%;
+  left: 0;
+  @include opacity(0);
+  overflow-y: auto;
+  position: fixed;
+  @include scale(0);
+  @include transition(all 0.2s ease-in-out);
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  &.active {
+    @include opacity(1);
+    @include scale(1);
+  }
+  .Header-menu {
+    @include flex(0 1 100%);
+    padding-top: 0;
+    text-align: center;
+  }
+  .MainMenu {
+    @include flex-wrap(wrap);
+    li {
+      @include flex(0 1 100%);
+      font-size: 2em;
+      margin-bottom: 50px;
+      @media screen and (max-width: 767px) {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+.Slidebar-info, .Slidebar-social {
+  @include flex(0 1 100%);
+}
+.Slidebar-close {
+  color: white;
+  cursor: pointer;
+  font-size: 3em;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+}
+.Slidebar-content {
+  @include display-flex();
+  @include align-content(center);
+  @include justify-content(center);
+  @include flex-wrap(wrap);
+  height: 100%;
+  @media screen and (max-width: 767px) and (orientation: landscape) {
+    @include align-content(flex-start);
+  }
+}
+.Slidebar-info {
+  margin-top: 40px;
+  @media screen and (max-width: 767px) {
+    margin-top: 20px;
+  }
+}
+.Slidebar-text {
+  color: white;
+  font-family: "montserratmedium";
+  font-size: 1.625em;
+  @media screen and (max-width: 767px) {
+    font-size: 1.125em;
+  }
+}
+.Slidebar-social {
+  @include display-flex();
+  @include justify-content(center);
+  margin: 30px 0 0 0;
+  padding-left: 0;
+}
+.Slidebar-social-item {
+  list-style: none;
+  margin-right: 50px;
+  &:last-child {
+    margin-right: 0;
+  }
+  a {
+    color: white;
+    display: block;
+    font-size: 3em;
+    &:hover {
+      color: $title-color;
+    }
+  }
+}

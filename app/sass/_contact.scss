@@ -1,15 +1,30 @@
 .Contact {
   @include display-flex();
+  @media screen and (max-width: 767px) {
+    @include flex-wrap(wrap);
+  }
 }
 .Contact-map, .Contact-form {
   @include flex-basis(50%);
+  @media screen and (max-width: 767px) {
+    @include flex(0 1 100%);
+  }
 }
 .Contact-map-figure {
   height: 100%;
 }
+.Contact-map {
+  @media screen and (max-width: 767px) {
+    @include order(1);
+  }
+}
 .Contact-form {
   background-color: $black;
   padding: 80px 12%;
+  @media screen and (max-width: 767px) {
+    @include order(0);
+    padding: 50px 25px;
+  }
   .Form {
     margin-top: 25px;
   }

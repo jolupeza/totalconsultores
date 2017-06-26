@@ -16,6 +16,9 @@
       }
     }
   }
+  @media screen and (max-width: 991px) {
+    padding-top: 100px;
+  }
 }
 .Page-section {
   margin-top: 30px;
@@ -59,12 +62,22 @@
 .Page-blog {
   @include display-flex();
   margin-top: 25px;
+  @media screen and (max-width: 767px) {
+    @include flex-wrap(wrap);
+  }
 }
 .Page-blog-item {
   @include flex-basis(33.33%);
   padding: 0 15px;
   p {
     font-family: "montserratlight";
+    @media screen and (max-width: 991px) {
+      font-size: 0.875em;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    @include flex-basis(100%);
+    margin-bottom: 20px;
   }
 }
 .Page-blog-figure {
@@ -79,6 +92,10 @@
 .Page-blog-title {
   font-family: "montserratmedium";
   font-size: 1.5em;
+  @media screen and (max-width: 991px) {
+    font-size: 1.25em;
+    margin-top: 0;
+  }
   a {
     color: $black;
     margin-top: 0;

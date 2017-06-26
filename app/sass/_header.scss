@@ -27,13 +27,27 @@
       }
     }
   }
+  @media screen and (max-width: 991px) {
+    padding: 8px 0;
+  }
 }
 .Header-logo {
   margin: 0;
+  @media screen and (max-width: 991px) {
+    img {
+      margin: 0;
+      width: 250px;
+    }
+  }
 }
 .Header-menu {
   @include display-flex();
   margin: 0;
   padding-left: 0;
   padding-top: 25px;
+}
+.Header-toggle {
+  color: white;
+  cursor: pointer;
+  font-size: 2.5em;
 }

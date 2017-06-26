@@ -48,11 +48,11 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('./../fonts/icomoon.eot?jcscvr');
-  src:  url('./../fonts/icomoon.eot?jcscvr#iefix') format('embedded-opentype'),
-    url('./../fonts/icomoon.ttf?jcscvr') format('truetype'),
-    url('./../fonts/icomoon.woff?jcscvr') format('woff'),
-    url('./../fonts/icomoon.svg?jcscvr#icomoon') format('svg');
+  src:  url('./../fonts/icomoon.eot?tdwnv8');
+  src:  url('./../fonts/icomoon.eot?tdwnv8#iefix') format('embedded-opentype'),
+    url('./../fonts/icomoon.ttf?tdwnv8') format('truetype'),
+    url('./../fonts/icomoon.woff?tdwnv8') format('woff'),
+    url('./../fonts/icomoon.svg?tdwnv8#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -72,11 +72,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-bars:before {
+  content: "\e906";
+}
 .icon-arrow-circle-o-left:before {
   content: "\e904";
 }
 .icon-arrow-circle-o-right:before {
   content: "\e905";
+}
+.icon-close:before {
+  content: "\e907";
 }
 .icon-keyboard_arrow_right:before {
   content: "\e902";
