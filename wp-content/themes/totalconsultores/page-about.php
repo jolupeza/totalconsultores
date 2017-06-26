@@ -105,15 +105,13 @@
         $val = get_post_custom(get_the_id());
         $title = isset($val['mb_title']) ? esc_attr($val['mb_title'][0]) : '';
         $subtitle = isset($val['mb_subtitle']) ? esc_attr($val['mb_subtitle'][0]) : '';
+        $backgroundUrl = wp_get_attachment_url(get_post_thumbnail_id(get_the_id()));
   ?>
-      <section class="Parallax">
-        <?php if (has_post_thumbnail()) : ?>
-          <?php the_post_thumbnail('full', ['class' => 'img-responsive center-block']); ?>
-          <article class="Parallax-caption animation-element animated" data-animation="fadeInLeft">
-            <?php if (!empty($subtitle)) : ?><h3 class="Parallax-subtitle"><?php echo $subtitle; ?></h3><?php endif; ?>
-            <?php if (!empty($title)) : ?><h2 class="Parallax-title"><?php echo $title; ?></h2><?php endif; ?>
-          </article>
-        <?php endif; ?>
+      <section class="Parallax" style="background-image: url('<?php echo $backgroundUrl; ?>');">
+        <article class="Parallax-caption animation-element animated" data-animation="fadeInLeft">
+          <?php if (!empty($subtitle)) : ?><h3 class="Parallax-subtitle"><?php echo $subtitle; ?></h3><?php endif; ?>
+          <?php if (!empty($title)) : ?><h2 class="Parallax-title"><?php echo $title; ?></h2><?php endif; ?>
+        </article>
       </section>
     <?php endwhile; ?>
   <?php endif; ?>

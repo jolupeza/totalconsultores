@@ -156,7 +156,7 @@
       @media screen and (max-width: 991px) {
         @include flex(1 0 25%);
       }
-      @media screen and (max-width: 991px) {
+      @media screen and (max-width: 767px) {
         @include flex(1 0 50%);
       }
     }

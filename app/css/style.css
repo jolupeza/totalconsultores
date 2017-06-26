@@ -652,7 +652,7 @@ a:hover, a:focus {
     flex: 1 0 25%;
   }
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 767px) {
   .Page-list--flex li {
     -webkit-flex: 1 0 50%;
     flex: 1 0 50%;
