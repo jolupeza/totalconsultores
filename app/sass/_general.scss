@@ -20,6 +20,17 @@ body {
         }
       }
     }
+    .Slidebar {
+      .MainMenu {
+        li {
+          &.menu-item-object-projects {
+            a {
+              border-bottom: 4px solid white;
+            }
+          }
+        }
+      }
+    }
     .Header {
       &.affix {
         .MainMenu--black {

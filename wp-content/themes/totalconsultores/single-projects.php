@@ -40,7 +40,18 @@
               <?php if (has_post_thumbnail()) : ?>
                 <?php $thumb = true; ?>
                 <div class="item active">
-                  <?php the_post_thumbnail('full', ['class' => 'img-responsive center-block']); ?>
+                  <?php
+                    $responsive = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'projects-single-responsive');
+                  ?>
+                  <picture>
+                    <source class="img-responsive center-block" media="(max-width: 767px) and (orientation: portrait)" srcset="<?php echo $responsive[0]; ?>" alt="<?php echo get_the_title(); ?>" />
+
+                    <?php the_post_thumbnail('full', [
+                        'class' => 'img-responsive center-block',
+                        'alt' => get_the_title()
+                      ]);
+                    ?>
+                  </picture>
                 </div>
               <?php endif; ?>
 
@@ -55,11 +66,15 @@
               <?php foreach ($galleryIds as $idImage) : ?>
                 <?php
                   $image = wp_get_attachment_image_src((int)$idImage, 'full');
+                  $responsive = wp_get_attachment_image_src((int) $idImage, 'projects-single-responsive')[0];
 
                   $active = ($i === 0) && !$thumb ? ' active' : '';
                 ?>
                 <div class="item<?php echo $active; ?>">
-                  <img class="img-responsive center-block" src="<?php echo $image[0]; ?>" />
+                  <picture>
+                    <source class="img-responsive center-block" media="(max-width: 767px) and (orientation: portrait)" srcset="<?php echo $responsive; ?>" alt="<?php echo get_the_title(); ?>" />
+                    <img class="img-responsive center-block" src="<?php echo $image[0]; ?>" alt="<?php echo get_the_title(); ?>" />
+                  </picture>
                 </div>
                 <?php $i++; ?>
               <?php endforeach; ?>
@@ -95,8 +110,14 @@
         <?php endif; ?>
       <?php else : ?>
         <?php if (has_post_thumbnail()) : ?>
+          <?php
+            $responsive = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'projects-single-responsive');
+          ?>
           <figure class="Page-single-figure">
-            <?php the_post_thumbnail('full', ['class' => 'img-responsive center-block']); ?>
+            <picture>
+              <source class="img-responsive center-block" media="(max-width: 767px) and (orientation: portrait)" srcset="<?php echo $responsive[0]; ?>" alt="<?php echo get_the_title(); ?>" />
+              <?php the_post_thumbnail('full', ['class' => 'img-responsive center-block']); ?>
+            </picture>
           </figure>
         <?php endif; ?>
       <?php endif; ?>
@@ -113,13 +134,13 @@
 
         <nav class="Single-nav">
           <?php if (is_object($prevPost)) : ?>
-            <a href="<?php echo get_permalink($prevPost); ?>" class="Single-nav-pre"><i class="icon-arrow-circle-o-left"></i> <?php echo $prevPost->post_title; ?></a>
+            <a href="<?php echo get_permalink($prevPost); ?>" class="Single-nav-pre"><i class="icon-arrow-circle-o-left"></i><span><?php echo $prevPost->post_title; ?></span></a>
           <?php else : ?>
             <span>&nbsp;</span>
           <?php endif; ?>
 
           <?php if (is_object($nextPost)) : ?>
-            <a href="<?php echo get_permalink($nextPost); ?>" class="Single-nav-next"><?php echo $nextPost->post_title; ?> <i class="icon-arrow-circle-o-right"></i></a>
+            <a href="<?php echo get_permalink($nextPost); ?>" class="Single-nav-next"><span><?php echo $nextPost->post_title; ?></span><i class="icon-arrow-circle-o-right"></i></a>
           <?php else : ?>
             <span>&nbsp;</span>
           <?php endif; ?>

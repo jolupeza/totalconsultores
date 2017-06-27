@@ -13,6 +13,9 @@ body.single-projects .MainMenu--black li a, body.tax-types .MainMenu--black li a
 body.single-projects .MainMenu--black li a:hover, body.tax-types .MainMenu--black li a:hover {
   border-bottom: 4px solid #fa5151;
 }
+body.single-projects .Slidebar .MainMenu li.menu-item-object-projects a, body.tax-types .Slidebar .MainMenu li.menu-item-object-projects a {
+  border-bottom: 4px solid white;
+}
 body.single-projects .Header.affix .MainMenu--black li.menu-item-object-projects a, body.tax-types .Header.affix .MainMenu--black li.menu-item-object-projects a {
   border-bottom: 4px solid white;
 }
@@ -332,7 +335,8 @@ a:hover, a:focus {
 }
 @media screen and (max-width: 767px) {
   .Carousel--project .carousel-indicators {
-    bottom: 25px;
+    bottom: 10px;
+    margin: 0;
     position: absolute;
     width: 100%;
   }
@@ -1207,6 +1211,8 @@ a:hover, a:focus {
   display: -webkit-flex;
   display: flex;
   color: #333333;
+  -webkit-flex: 0 1 50%;
+  flex: 0 1 50%;
   font-family: "montserratmedium";
   font-size: 1.125em;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
@@ -1247,6 +1253,8 @@ a:hover, a:focus {
 }
 
 .Single-nav-next {
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
   text-align: right;
 }
 

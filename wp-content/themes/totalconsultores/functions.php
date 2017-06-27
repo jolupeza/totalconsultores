@@ -27,6 +27,11 @@ if ( function_exists('add_theme_support') ) {
     'x_crop_position' => 'center',
     'y_crop_position' => 'center'
   ]);
+
+  add_image_size('projects-single-responsive', 768, 600, [
+    'x_crop_position' => 'center',
+    'y_crop_position' => 'center'
+  ]);
 }
 
 /****************************************/
