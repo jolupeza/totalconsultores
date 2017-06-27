@@ -309,9 +309,33 @@ a:hover, a:focus {
 .Carousel--project .carousel-indicators li img {
   width: 150px;
 }
+@media screen and (max-width: 767px) {
+  .Carousel--project .carousel-indicators li img {
+    display: none;
+  }
+}
 .Carousel--project .carousel-indicators li.active .img-thumbnail {
   background-color: #ff6043;
   border-color: #ff6043;
+}
+@media screen and (max-width: 767px) {
+  .Carousel--project .carousel-indicators li.active {
+    background-color: #ff6043;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Carousel--project .carousel-indicators li {
+    background-color: #fff;
+    height: 15px;
+    width: 15px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Carousel--project .carousel-indicators {
+    bottom: 25px;
+    position: absolute;
+    width: 100%;
+  }
 }
 .Carousel--project .carousel-control {
   background-image: none;
@@ -1180,6 +1204,8 @@ a:hover, a:focus {
 }
 
 .Single-nav-pre, .Single-nav-next {
+  display: -webkit-flex;
+  display: flex;
   color: #333333;
   font-family: "montserratmedium";
   font-size: 1.125em;
@@ -1193,8 +1219,18 @@ a:hover, a:focus {
 .Single-nav-pre i.icon-arrow-circle-o-left, .Single-nav-next i.icon-arrow-circle-o-left {
   margin-right: 15px;
 }
+@media screen and (max-width: 767px) {
+  .Single-nav-pre i.icon-arrow-circle-o-left, .Single-nav-next i.icon-arrow-circle-o-left {
+    margin-right: 5px;
+  }
+}
 .Single-nav-pre i.icon-arrow-circle-o-right, .Single-nav-next i.icon-arrow-circle-o-right {
   margin-left: 15px;
+}
+@media screen and (max-width: 767px) {
+  .Single-nav-pre i.icon-arrow-circle-o-right, .Single-nav-next i.icon-arrow-circle-o-right {
+    margin-left: 5px;
+  }
 }
 .Single-nav-pre:hover, .Single-nav-next:hover {
   color: #333333;
@@ -1203,6 +1239,15 @@ a:hover, a:focus {
 }
 .Single-nav-pre:hover i[class^="icon-"], .Single-nav-next:hover i[class^="icon-"] {
   color: #ff6043;
+}
+@media screen and (max-width: 767px) {
+  .Single-nav-pre, .Single-nav-next {
+    font-size: 1em;
+  }
+}
+
+.Single-nav-next {
+  text-align: right;
 }
 
 .Single-tags {

@@ -3,6 +3,7 @@
   @include justify-content(space-between);
 }
 .Single-nav-pre, .Single-nav-next {
+  @include display-flex();
   color: $blackSoft;
   font-family: "montserratmedium";
   font-size: 1.125em;
@@ -14,9 +15,15 @@
   i {
     &.icon-arrow-circle-o-left {
       margin-right: 15px;
+      @media screen and (max-width: 767px) {
+        margin-right: 5px;
+      }
     }
     &.icon-arrow-circle-o-right {
       margin-left: 15px;
+      @media screen and (max-width: 767px) {
+        margin-left: 5px;
+      }
     }
   }
   &:hover {
@@ -26,6 +33,12 @@
       color: $orange;
     }
   }
+  @media screen and (max-width: 767px) {
+    font-size: 1em;
+  }
+}
+.Single-nav-next {
+  text-align: right;
 }
 .Single-tags {
   @include display-flex();

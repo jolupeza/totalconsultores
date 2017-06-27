@@ -27,14 +27,14 @@
     <header class="Header Header--black">
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-3 col-xs-10">
             <h1 class="Header-logo">
               <a href="index.html" title="Total Consultores S.A.C">
                 <img src="images/logo-black.png" alt="Total Consultores S.A.C." class="img-responsive center-block" />
               </a>
             </h1>
           </div>
-          <div class="col-md-9">
+          <div class="col-md-9 hidden-sm hidden-xs">
             <menu class="Header-menu">
               <ul class="MainMenu MainMenu--black">
                 <li><a href="index.html">Inicio</a></li>
@@ -45,9 +45,41 @@
               </ul>
             </menu>
           </div>
+          <div class="col-xs-2 visible-sm-block visible-xs-block">
+            <aside class="Header-toggle text-right"><i class="icon-bars"></i></aside>
+          </div>
         </div>
       </div>
     </header>
+
+    <section class="Slidebar">
+      <aside class="Slidebar-close js-toglle-slidebar">
+        <i class="icon-close"></i>
+      </aside>
+
+      <article class="Slidebar-content">
+        <menu class="Header-menu">
+          <ul class="MainMenu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="about.html">Conócenos</a></li>
+            <li class="active"><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="blog.html">Totalnews</a></li>
+            <li><a href="">Contacto</a></li>
+          </ul>
+        </menu>
+
+        <article class="Slidebar-info">
+          <p class="Slidebar-text text-center">(+511) 123-4567</p>
+          <p class="Slidebar-text text-center">hola@totalconsultores.com</p>
+        </article>
+
+        <ul class="Slidebar-social">
+          <li class="Slidebar-social-item"><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li class="Slidebar-social-item"><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li class="Slidebar-social-item"><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        </ul>
+      </article>
+    </section>
 
     <section class="Page Page-single">
       <div class="container">
@@ -100,8 +132,12 @@
         <hr class="Hr">
 
         <nav class="Single-nav">
-          <a href="" class="Single-nav-pre"><i class="icon-arrow-circle-o-left"></i> Zona Arqueológica Bellavista</a>
-          <a href="" class="Single-nav-next">Zona Arqueológica Bellavista <i class="icon-arrow-circle-o-right"></i></a>
+          <a href="" class="Single-nav-pre">
+            <i class="icon-arrow-circle-o-left"></i> <span>Zona Arqueológica Bellavista</span>
+          </a>
+          <a href="" class="Single-nav-next">
+            <span>Zona Arqueológica Bellavista</span> <i class="icon-arrow-circle-o-right"></i>
+          </a>
         </nav>
       </div>
     </section>
@@ -144,13 +180,15 @@
         </h1>
 
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-8">
             <p class="Footer-text">Somos una consultora con más de 10 años de experiencia en temas de construcción civil y arquitectura.</p>
           </div>
-          <div class="col-md-4"></div>
-          <div class="col-md-4">
-            <p class="Footer-text text-right">(+511) 123-4567</p>
-            <p class="Footer-text text-right">hola@totalconsultores.com</p>
+          <div class="col-md-4 hidden-sm hidden-xs"></div>
+          <div class="col-md-4 col-sm-4">
+            <article class="Footer-info">
+              <p class="Footer-text text-right">(+511) 123-4567</p>
+              <p class="Footer-text text-right">hola@totalconsultores.com</p>
+            </article>
           </div>
         </div>
 
