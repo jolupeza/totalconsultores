@@ -3,6 +3,11 @@
 }
 .Sidebar-widget {
   margin-bottom: 25px;
+  @media screen and (max-width: 991px) {
+    @include display-flex();
+    @include flex-wrap(wrap);
+    @include justify-content(space-between);
+  }
 }
 .Sidebar-title {
   border-bottom: 2px solid #c9c9c9;
@@ -22,17 +27,32 @@
     position: absolute;
     width: 90px;
   }
+  @media screen and (max-width: 991px) {
+    @include flex(0 1 100%);
+  }
 }
 .Sidebar-related {
   @include display-flex();
   @include justify-content(space-between);
   margin-bottom: 20px;
+  @media screen and (max-width: 991px) {
+    @include flex(0 1 48%);
+  }
+  @media screen and (max-width: 767px) and (orientation: portrait) {
+    @include flex-wrap(wrap);
+  }
 }
 .Sidebar-related-figure {
   @include flex(0 1 45%);
+  @media screen and (max-width: 767px) and (orientation: portrait) {
+    @include flex(0 1 100%);
+  }
 }
 .Sidebar-related-content {
   @include flex(0 1 50%);
+  @media screen and (max-width: 767px) and (orientation: portrait) {
+    @include flex(0 1 100%);
+  }
 }
 .Sidebar-related-content-title {
   font-family: "montserratmedium";
@@ -42,5 +62,8 @@
     &:hover {
       color: $orange;
     }
+  }
+  @media screen and (max-width: 767px) and (orientation: portrait)  {
+    text-align: center;
   }
 }

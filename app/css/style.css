@@ -899,12 +899,22 @@ a:hover, a:focus {
 .Page-single-title {
   font-family: "montserratmedium";
 }
+@media screen and (max-width: 767px) {
+  .Page-single-title {
+    text-align: center;
+  }
+}
 
 .Page-single-category {
   font-size: 1.125em;
 }
 .Page-single-category a:hover {
   color: #f22424;
+}
+@media screen and (max-width: 767px) {
+  .Page-single-category {
+    text-align: center;
+  }
 }
 
 .Page-single-figure {
@@ -1263,6 +1273,12 @@ a:hover, a:focus {
   display: flex;
   margin: 25px 0;
 }
+@media screen and (max-width: 767px) {
+  .Single-tags {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
 
 .Single-tags-title {
   color: #333333;
@@ -1288,13 +1304,37 @@ a:hover, a:focus {
 }
 .Single-tags-list li a {
   color: #333333;
+  display: block;
 }
 .Single-tags-list li a:hover {
   color: #ff6043;
 }
+@media screen and (max-width: 767px) {
+  .Single-tags-list li {
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Single-tags-list {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex: 0 1 100%;
+    flex: 0 1 100%;
+  }
+}
 
 .Sidebar-widget {
   margin-bottom: 25px;
+}
+@media screen and (max-width: 991px) {
+  .Sidebar-widget {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+  }
 }
 
 .Sidebar-title {
@@ -1316,6 +1356,12 @@ a:hover, a:focus {
   position: absolute;
   width: 90px;
 }
+@media screen and (max-width: 991px) {
+  .Sidebar-title {
+    -webkit-flex: 0 1 100%;
+    flex: 0 1 100%;
+  }
+}
 
 .Sidebar-related {
   display: -webkit-flex;
@@ -1324,15 +1370,39 @@ a:hover, a:focus {
   justify-content: space-between;
   margin-bottom: 20px;
 }
+@media screen and (max-width: 991px) {
+  .Sidebar-related {
+    -webkit-flex: 0 1 48%;
+    flex: 0 1 48%;
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .Sidebar-related {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
 
 .Sidebar-related-figure {
   -webkit-flex: 0 1 45%;
   flex: 0 1 45%;
 }
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .Sidebar-related-figure {
+    -webkit-flex: 0 1 100%;
+    flex: 0 1 100%;
+  }
+}
 
 .Sidebar-related-content {
   -webkit-flex: 0 1 50%;
   flex: 0 1 50%;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .Sidebar-related-content {
+    -webkit-flex: 0 1 100%;
+    flex: 0 1 100%;
+  }
 }
 
 .Sidebar-related-content-title {
@@ -1344,6 +1414,11 @@ a:hover, a:focus {
 }
 .Sidebar-related-content-title a:hover {
   color: #ff6043;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .Sidebar-related-content-title {
+    text-align: center;
+  }
 }
 
 .Blog {
@@ -1359,6 +1434,12 @@ a:hover, a:focus {
   -webkit-flex: 0 1 49%;
   flex: 0 1 49%;
   margin-bottom: 15px;
+}
+@media screen and (max-width: 767px) {
+  .Blog-item {
+    -webkit-flex: 0 1 100%;
+    flex: 0 1 100%;
+  }
 }
 
 .Blog-item-figure {
@@ -1379,6 +1460,34 @@ a:hover, a:focus {
   font-size: 0.875em;
   text-shadow: rgba(0, 0, 0, 0.9) 1px 1px 2px;
 }
+@media screen and (max-width: 991px) {
+  .Blog-item-content p {
+    margin-bottom: 5px;
+  }
+}
+.Blog-item-content .Button:focus {
+  color: white;
+}
+@media screen and (max-width: 991px) {
+  .Blog-item-content .Button--small {
+    padding: 5px 15px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .Blog-item-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Blog-item-content {
+    background-color: #ff6043;
+    height: auto;
+    padding: 10px;
+    position: relative;
+    top: auto;
+  }
+}
 
 .Blog-title {
   color: white;
@@ -1386,6 +1495,12 @@ a:hover, a:focus {
   font-size: 1.125em;
   margin-top: 0;
   text-shadow: rgba(0, 0, 0, 0.9) 1px 1px 2px;
+}
+@media screen and (max-width: 991px) {
+  .Blog-title {
+    font-size: 1em;
+    margin-bottom: 5px;
+  }
 }
 
 .Slidebar {
