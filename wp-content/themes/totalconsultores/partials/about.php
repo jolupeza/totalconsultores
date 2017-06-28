@@ -37,7 +37,7 @@
           ?>
           <?php if (!empty($webm) || !empty($mp4) || !empty($ogv)) : ?>
             <figure class="Page-video text-center">
-              <video width="640" controls poster="<?php echo IMAGES; ?>/video-about.jpg" >
+              <video controls poster="<?php echo IMAGES; ?>/video-about.jpg" >
                 <?php if (!empty($webm)) : ?>
                   <source
                     src="<?php echo $webm; ?>"

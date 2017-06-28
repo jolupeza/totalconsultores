@@ -344,3 +344,15 @@
 .Page-single-figure {
   margin: 20px 0;
 }
+.Page-video {
+  video {
+    margin: 0 auto;
+    width: 640px;
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    margin-top: 30px;
+  }
+}

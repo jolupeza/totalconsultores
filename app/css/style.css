@@ -921,6 +921,21 @@ a:hover, a:focus {
   margin: 20px 0;
 }
 
+.Page-video video {
+  margin: 0 auto;
+  width: 640px;
+}
+@media screen and (max-width: 767px) {
+  .Page-video video {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 991px) {
+  .Page-video {
+    margin-top: 30px;
+  }
+}
+
 .Parallax {
   background-color: transparent;
   background-position: 0 0;
