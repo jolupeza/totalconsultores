@@ -205,4 +205,41 @@ function tc_customize_register($wp_customize) {
     'settings' => 'tc_custom_settings[slogan_title]',
     'type'     => 'text'
   ));
+
+  // Videos Conócenos
+  $wp_customize->add_section('tc_videos', [
+    'title' => __('Videos Conócenos', THEMEDOMAIN),
+    'description' => __('Subir los videos que se mostrarán en página Conócenos en tres formatos webm, mp4 y ogv', THEMEDOMAIN),
+    'priority' => 39
+  ]);
+
+  $wp_customize->add_setting('tc_custom_settings[video_webm]', array(
+    'type' => 'option'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'video_webm', array(
+    'label' => __('Formato Webm', THEMEDOMAIN),
+    'section' => 'tc_videos',
+    'settings' => 'tc_custom_settings[video_webm]'
+  )));
+
+  $wp_customize->add_setting('tc_custom_settings[video_mp4]', array(
+    'type' => 'option'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'video_mp4', array(
+    'label' => __('Formato Mp4', THEMEDOMAIN),
+    'section' => 'tc_videos',
+    'settings' => 'tc_custom_settings[video_mp4]'
+  )));
+
+  $wp_customize->add_setting('tc_custom_settings[video_ogv]', array(
+    'type' => 'option'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'video_ogv', array(
+    'label' => __('Formato Ogv', THEMEDOMAIN),
+    'section' => 'tc_videos',
+    'settings' => 'tc_custom_settings[video_ogv]'
+  )));
 }

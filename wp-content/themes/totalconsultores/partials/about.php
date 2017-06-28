@@ -1,4 +1,6 @@
 <?php
+  $options = get_option('tc_custom_settings');
+
   $aboutPage = get_page_by_title('Conócenos');
   $parallaxAbout = null;
 
@@ -28,9 +30,35 @@
           </p>
         </div>
         <div class="col-md-7">
-          <figure class="Page-video">
-            <img src="<?php echo IMAGES; ?>/video-about.jpg" class="img-responsive center-block" />
-          </figure>
+          <?php
+            $webm = isset($options['video_webm']) ? $options['video_webm'] : '';
+            $mp4 = isset($options['video_mp4']) ? $options['video_mp4'] : '';
+            $ogv = isset($options['video_ogv']) ? $options['video_ogv'] : '';
+          ?>
+          <?php if (!empty($webm) || !empty($mp4) || !empty($ogv)) : ?>
+            <figure class="Page-video text-center">
+              <video width="640" controls poster="<?php echo IMAGES; ?>/video-about.jpg" >
+                <?php if (!empty($webm)) : ?>
+                  <source
+                    src="<?php echo $webm; ?>"
+                    type="video/webm">
+                <?php endif; ?>
+
+                <?php if (!empty($mp4)) : ?>
+                  <source
+                    src="<?php echo $mp4; ?>"
+                    type="video/mp4">
+                <?php endif; ?>
+
+                <?php if (!empty($ogv)) : ?>
+                  <source
+                    src="<?php echo $ogv; ?>"
+                    type="video/ogg">
+                <?php endif; ?>
+                Su navegador no admite etiquetas de video HTML5.
+              </video>
+            </figure>
+          <?php endif; ?>
         </div>
       </div>
     </div>
