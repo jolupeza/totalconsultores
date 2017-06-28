@@ -455,8 +455,8 @@ a:hover, a:focus {
 }
 
 .Services-item {
-  -webkit-flex-basis: 33.33%;
-  flex-basis: 33.33%;
+  -webkit-flex: 0 1 auto;
+  flex: 0 1 auto;
   position: relative;
 }
 

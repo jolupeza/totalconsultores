@@ -2,7 +2,7 @@
   @include display-flex();
 }
 .Services-item {
-  @include flex-basis(33.33%);
+  @include flex(0 1 auto);
   position: relative;
 }
 .Services-title {
