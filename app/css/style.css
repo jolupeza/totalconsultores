@@ -1645,3 +1645,35 @@ a:hover, a:focus {
 .Slidebar-social-item a:hover {
   color: #3b3b3b;
 }
+
+.Modal--video .modal-dialog {
+  margin-bottom: 0;
+  width: 660px;
+}
+@media screen and (max-width: 767px) {
+  .Modal--video .modal-dialog {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+}
+.Modal--video .modal-body {
+  padding: 0;
+}
+.Modal--video .modal-body .close {
+  color: #ff6043;
+  font-size: 4em;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+@media screen and (max-width: 991px) {
+  .Modal--video .Page-video {
+    margin-top: 0;
+  }
+}
+.Modal--orange .modal-content {
+  border: 10px solid #ff6043;
+}

@@ -30,7 +30,9 @@
           <div class="col-md-1"></div>
           <div class="col-md-6">
             <?php the_content(); ?>
-            <p class="Page-link"><a href=""><i class="icon-play"></i> Ver Video Institucional</a></p>
+            <p class="Page-link">
+              <a href="#" data-toggle="modal" data-target="#md-video"><i class="icon-play"></i> Ver Video Institucional</a>
+            </p>
           </div>
         </div>
 
@@ -147,5 +149,47 @@
 </section>
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>
+
+<!-- Modal Video -->
+<?php
+  $options = get_option('tc_custom_settings');
+
+  $webm = isset($options['video_webm']) ? $options['video_webm'] : '';
+  $mp4 = isset($options['video_mp4']) ? $options['video_mp4'] : '';
+  $ogv = isset($options['video_ogv']) ? $options['video_ogv'] : '';
+?>
+<?php if (!empty($webm) || !empty($mp4) || !empty($ogv)) : ?>
+  <div class="modal fade Modal Modal--video Modal--orange" id="md-video" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <figure class="Page-video text-center">
+            <video controls poster="<?php echo IMAGES; ?>/video-about.jpg" >
+              <?php if (!empty($webm)) : ?>
+                <source
+                  src="<?php echo $webm; ?>"
+                  type="video/webm">
+              <?php endif; ?>
+
+              <?php if (!empty($mp4)) : ?>
+                <source
+                  src="<?php echo $mp4; ?>"
+                  type="video/mp4">
+              <?php endif; ?>
+
+              <?php if (!empty($ogv)) : ?>
+                <source
+                  src="<?php echo $ogv; ?>"
+                  type="video/ogg">
+              <?php endif; ?>
+              Su navegador no admite etiquetas de video HTML5.
+            </video>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>
 
 <?php get_footer(); ?>
