@@ -20,10 +20,10 @@
           $values = get_post_custom(get_the_id());
           $title = isset($values['mb_title']) ? esc_attr($values['mb_title'][0]) : '';
           $subtitle = isset($values['mb_subtitle']) ? esc_attr($values['mb_subtitle'][0]) : '';
-          $text = isset($values['mb_text']) ? esc_attr($values['mb_text'][0]) : '';
-          $url = isset($values['mb_url']) ? esc_attr($values['mb_url'][0]) : '';
-          $target = isset($values['mb_target']) ? esc_attr($values['mb_target'][0]) : '';
-          $target = (!empty($target) && $target === 'on') ? ' target="_blank" rel="noopener noreferrer"' : '';
+          //$text = isset($values['mb_text']) ? esc_attr($values['mb_text'][0]) : '';
+          //$url = isset($values['mb_url']) ? esc_attr($values['mb_url'][0]) : '';
+          //$target = isset($values['mb_target']) ? esc_attr($values['mb_target'][0]) : '';
+          //$target = (!empty($target) && $target === 'on') ? ' target="_blank" rel="noopener noreferrer"' : '';
           $responsive = isset( $values['mb_responsive'] ) ? esc_attr($values['mb_responsive'][0]) : '';
         ?>
 
@@ -46,11 +46,12 @@
             <?php if (!empty($title)) : ?><h2><?php echo $title; ?></h2><?php endif; ?>
             <?php the_content(); ?>
 
-            <?php if (!empty($url)) : ?>
-              <p class="text-uppercase">
-                <a class="Button Button--orange" href="<?php echo $url; ?>"<?php echo $target; ?>><?php echo $text; ?></a>
+            <?php //if (!empty($url)) : ?>
+              <p class="text-uppercase js-menu-move-scroll">
+                <a class="Button Button--orange" href="#contacto">Escríbenos</a>
+                <!-- <a class="Button Button--orange" href="<?php echo $url; ?>"<?php echo $target; ?>><?php echo $text; ?></a> -->
               </p>
-            <?php endif; ?>
+            <?php //endif; ?>
           </div>
         </div>
         <?php $i++; ?>

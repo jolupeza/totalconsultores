@@ -84,6 +84,16 @@ var j = jQuery.noConflict();
       }, 2000, 'easeInOutExpo');
     });
 
+    j('.js-menu-move-scroll a').on('click', function(event) {
+      event.preventDefault();
+      var $this = j(this);
+      var dest = $this.attr('href');
+
+      j('html, body').stop().animate({
+        scrollTop: j(dest).offset().top
+      }, 2000, 'easeInOutExpo');
+    });
+
     j('#js-frm-contact').formValidation({
       locale: 'es_ES',
       framework: 'bootstrap',

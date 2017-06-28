@@ -4,7 +4,7 @@
       $long = isset($options['longitud']) ? $options['longitud'] : '';
     ?>
 
-    <section class="Contact">
+    <section class="Contact" id="contacto">
       <article class="Contact-map">
         <?php if (!empty($lat) && !empty($long)) : ?>
           <figure class="Contact-map-figure" id="map" data-lat="<?php echo $lat; ?>" data-long="<?php echo $long; ?>"></figure>
