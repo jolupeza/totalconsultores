@@ -1,3 +1,13 @@
+<?php
+  $args = [
+    'post_type' => 'post',
+    'posts_per_page' => 3
+  ];
+
+  $postsQuery = new WP_Query($args);
+
+  if ($postsQuery->have_posts()) :
+?>
 <section class="Page">
   <div class="container">
     <div class="row">
@@ -7,31 +17,30 @@
     </div>
 
     <section class="Page-blog">
-      <article class="Page-blog-item">
-        <figure class="Page-blog-figure">
-          <img src="<?php echo IMAGES; ?>/post1.jpg" class="img-responsive center-block">
-        </figure>
-        <h4 class="Page-blog-date">/ 28.03.2017</h4>
-        <h2 class="Page-blog-title"><a href="">Inauguración de la Zona arqueológica de Bellavista</a></h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi maxime deserunt tempora minus veritatis provident iure, praesentium dolor aliquam, unde nulla doloribus porro itaque quo dolores, ipsa sint distinctio aperiam!</p>
-        <p><a href="" class="Page-blog-readmore">> Leer más</a></p>
-      </article>
-      <article class="Page-blog-item">
-        <figure class="Page-blog-figure">
-          <img src="<?php echo IMAGES; ?>/post2.jpg" class="img-responsive center-block"></figure>
-        <h4 class="Page-blog-date">/ 28.03.2017</h4>
-        <h2 class="Page-blog-title"><a href="">Inauguración de la Zona arqueológica de Bellavista</a></h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel nobis sunt ipsam suscipit fugit voluptatibus! Dicta, blanditiis fugiat ullam provident numquam culpa ab necessitatibus cum saepe! Totam ea deleniti adipisci!</p>
-        <p><a href="" class="Page-blog-readmore">> Leer más</a></p>
-      </article>
-      <article class="Page-blog-item">
-        <figure class="Page-blog-figure">
-          <img src="<?php echo IMAGES; ?>/post3.jpg" class="img-responsive center-block"></figure>
-        <h4 class="Page-blog-date">/ 28.03.2017</h4>
-        <h2 class="Page-blog-title"><a href="">Inauguración de la Zona arqueológica de Bellavista</a></h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque vitae porro nesciunt maiores ab culpa, eligendi doloribus aliquam, accusamus id non dolor eaque consectetur quam laboriosam blanditiis vel doloremque minus.</p>
-        <p><a href="" class="Page-blog-readmore">> Leer más</a></p>
-      </article>
+      <?php while ($postsQuery->have_posts()) : ?>
+        <?php $postsQuery->the_post(); ?>
+        <article class="Page-blog-item">
+          <?php if (has_post_thumbnail()) : ?>
+            <figure class="Page-blog-figure">
+              <?php the_post_thumbnail('projects-single', [
+                  'class' => 'img-responsive center-block',
+                  'alt' => get_the_title()
+                ]);
+              ?>
+            </figure>
+          <?php endif; ?>
+          <h4 class="Page-blog-date">/ <?php echo get_the_date('d.m.Y'); ?></h4>
+          <h2 class="Page-blog-title">
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+          </h2>
+          <?php the_content(' '); ?>
+          <p>
+            <a href="<?php the_permalink(); ?>" class="Page-blog-readmore">&rsaquo; Leer más</a>
+          </p>
+        </article>
+      <?php endwhile; ?>
     </section>
   </div>
 </section>
+<?php endif; ?>
+<?php wp_reset_postdata(); ?>

@@ -69,3 +69,4 @@
     <button class="Arrow js-move-scroll" data-href="about"><i class="glyphicon glyphicon-chevron-down"></i></button>
   </section>
 <?php endif; ?>
+<?php wp_reset_postdata(); ?>
