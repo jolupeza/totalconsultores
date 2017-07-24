@@ -22,8 +22,11 @@
               'alt' => get_the_title()
             ]);
           ?>
+          <?php $termName = sanitize_title(get_the_title()); ?>
           <aside class="Services-title text-uppercase">
-            <h3 class="text-center"><?php the_title(); ?>.</h3>
+            <h3 class="text-center">
+              <a href="<?php echo home_url("tipo-proyecto/$termName") ?>"><?php the_title(); ?></a>
+            </h3>
           </aside>
         </article>
       <?php endif; ?>

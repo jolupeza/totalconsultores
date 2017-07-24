@@ -477,6 +477,12 @@ a:hover, a:focus {
   font-size: 2.25em;
   margin: 0;
 }
+.Services-title h3 a {
+  color: white;
+}
+.Services-title h3 a:hover {
+  color: #ff6043;
+}
 
 .Page {
   padding: 110px 0 80px;
