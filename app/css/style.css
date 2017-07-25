@@ -82,8 +82,8 @@ a:hover, a:focus {
 }
 @font-face {
   font-family: 'icomoon';
-  src: url("./../fonts/icomoon.eot?tdwnv8");
-  src: url("./../fonts/icomoon.eot?tdwnv8#iefix") format("embedded-opentype"), url("./../fonts/icomoon.ttf?tdwnv8") format("truetype"), url("./../fonts/icomoon.woff?tdwnv8") format("woff"), url("./../fonts/icomoon.svg?tdwnv8#icomoon") format("svg");
+  src: url("./../fonts/icomoon.eot?gx3vlg");
+  src: url("./../fonts/icomoon.eot?gx3vlg#iefix") format("embedded-opentype"), url("./../fonts/icomoon.ttf?gx3vlg") format("truetype"), url("./../fonts/icomoon.woff?gx3vlg") format("woff"), url("./../fonts/icomoon.svg?gx3vlg#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -101,35 +101,75 @@ a:hover, a:focus {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-bars:before {
-  content: "\e906";
-}
-
-.icon-arrow-circle-o-left:before {
-  content: "\e904";
-}
-
-.icon-arrow-circle-o-right:before {
-  content: "\e905";
-}
-
-.icon-close:before {
-  content: "\e907";
-}
-
-.icon-keyboard_arrow_right:before {
-  content: "\e902";
-}
-
-.icon-keyboard_arrow_left:before {
+.icon-keyboard_arrow_up:before {
   content: "\e903";
 }
 
-.icon-search:before {
+.icon-keyboard_arrow_right:before {
+  content: "\e904";
+}
+
+.icon-keyboard_arrow_left:before {
+  content: "\e905";
+}
+
+.icon-keyboard_arrow_down:before {
+  content: "\e906";
+}
+
+.icon-brush-alt:before {
   content: "\e901";
 }
 
-.icon-play:before {
+.icon-phone:before {
+  content: "\e942";
+}
+
+.icon-search:before {
+  content: "\e986";
+}
+
+.icon-cross:before {
+  content: "\ea0f";
+}
+
+.icon-play2:before {
+  content: "\ea15";
+}
+
+.icon-arrow-up2:before {
+  content: "\ea3a";
+}
+
+.icon-arrow-right2:before {
+  content: "\ea3c";
+}
+
+.icon-arrow-down2:before {
+  content: "\ea3e";
+}
+
+.icon-arrow-left2:before {
+  content: "\ea40";
+}
+
+.icon-facebook:before {
+  content: "\ea90";
+}
+
+.icon-flickr2:before {
+  content: "\eaa4";
+}
+
+.icon-bars:before {
+  content: "\e907";
+}
+
+.icon-commenting-o:before {
+  content: "\e902";
+}
+
+.icon-youtube:before {
   content: "\e900";
 }
 
@@ -1682,4 +1722,59 @@ a:hover, a:focus {
 }
 .Modal--orange .modal-content {
   border: 10px solid #ff6043;
+}
+
+.Bxslider-figure {
+  position: relative;
+}
+.Bxslider-figure:hover .Bxslider-content {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+
+.Bxslider-content {
+  background-color: rgba(255, 96, 67, 0.5);
+  bottom: 0;
+  -webkit-align-content: end;
+  align-content: end;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  left: 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  padding: 0 0 20px 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  -moz-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  -webkit-transform: scale(0, 0);
+  transform: scale(0, 0);
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  width: 100%;
+}
+
+.Bxslider-title, .Bxslider-text {
+  color: white;
+  -webkit-flex: 0 1 100%;
+  flex: 0 1 100%;
+  font-family: "montserratmedium";
+  margin: 0;
+}
+
+.Bxslider-title {
+  font-size: 1.125em;
+}
+
+.Bxslider-text {
+  font-size: 0.875em;
 }

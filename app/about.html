@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./../bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="./../node_modules/animate.css/animate.css" />
     <link rel="stylesheet" href="./libs/formvalidation/dist/css/formValidation.css" />
+    <link rel="stylesheet" href="./libs/jquery.bxslider/jquery.bxslider.css" />
     <!-- endbower -->
     <!-- inject:css -->
     <link rel="stylesheet" href="css/style.css">
@@ -170,6 +171,31 @@
       </div>
     </section>
 
+    <section class="Page">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h4 class="Page-legend text-uppercase text-right text-title">Nuestros</h4>
+            <h3 class="Page-resalt text-uppercase text-right text-orange">Expertos</h3>
+            <hr class="Page-separator Page-separator--short Page-separator--right Page-separator--orange">
+          </div>
+          <div class="col-md-8">
+            <ul class="bxslider Bxslider-list">
+              <li>
+                <figure class="Bxslider-figure">
+                  <img src="./images/experto.jpg" alt="" class="img-responsive center-block">
+                  <aside class="Bxslider-content">
+                    <h3 class="Bxslider-title text-center">Marco Barriga C.</h3>
+                    <p class="Bxslider-text">CEO TotalConsultores</p>
+                  </aside>
+                </figure>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="Contact">
       <article class="Contact-map">
         <figure class="Contact-map-figure">
@@ -237,7 +263,7 @@
       </div>
     </footer>
 
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- build:js js/vendor.min.js -->
     <!-- bower:js -->
@@ -246,6 +272,7 @@
     <script src="./libs/formvalidation/dist/js/framework/bootstrap.js"></script>
     <script src="./libs/formvalidation/dist/js/language/es_ES.js"></script>
     <script src="./../node_modules/jquery.easing/jquery.easing.js"></script>
+    <script src="./libs/jquery.bxslider/jquery.bxslider.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js js/app.min.js -->

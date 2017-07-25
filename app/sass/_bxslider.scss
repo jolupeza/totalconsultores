@@ -1,0 +1,37 @@
+.Bxslider-figure {
+  position: relative;
+  &:hover {
+    .Bxslider-content {
+      @include opacity(1);
+      @include scale(1);
+    }
+  }
+}
+.Bxslider-content {
+  background-color: rgba($orange, 0.5);
+  bottom: 0;
+  @include align-content(end);
+  @include display-flex();
+  @include flex-wrap(wrap);
+  left: 0;
+  @include opacity(0);
+  padding: 0 0 20px 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  @include scale(0);
+  @include transition(all 0.2s ease-in);
+  width: 100%;
+}
+.Bxslider-title, .Bxslider-text {
+  color: white;
+  @include flex(0 1 100%);
+  font-family: "montserratmedium";
+  margin: 0;
+}
+.Bxslider-title {
+  font-size: 1.125em;
+}
+.Bxslider-text {
+  font-size: 0.875em;
+}
