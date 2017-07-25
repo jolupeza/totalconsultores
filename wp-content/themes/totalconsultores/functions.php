@@ -21,7 +21,7 @@ add_action('wp_enqueue_scripts', 'load_custom_scripts');
 /* Add Theme Support */
 /****************************************/
 if ( function_exists('add_theme_support') ) {
-  add_theme_support('post-thumbnails', array('post', 'page', 'sliders', 'parallaxs', 'customers', 'projects'));
+  add_theme_support('post-thumbnails', array('post', 'page', 'sliders', 'parallaxs', 'customers', 'projects', 'experts'));
 
   add_image_size('projects-single', 585, 311, [
     'x_crop_position' => 'center',
@@ -205,28 +205,28 @@ require_once(TEMPLATEPATH . '/functions/widget-tc-posts-related.php');
  * @version 1.0
  */
 if (!function_exists('dump')) {
-    function dump($var, $label = 'Dump', $echo = true) {
-        // Store dump in variable
-        ob_start();
-        var_dump($var);
-        $output = ob_get_clean();
+  function dump($var, $label = 'Dump', $echo = true) {
+    // Store dump in variable
+    ob_start();
+    var_dump($var);
+    $output = ob_get_clean();
 
-        // Add formatting
-        $output = preg_replace("/\]\=\>\n(\s+)/m", '] => ', $output);
-        $output = '<pre style="background: #FFFEEF; color: #000; border: 1px dotted #000; padding: 10px; margin: 10px 0; text-align: left;">'.$label.' => '.$output.'</pre>';
+    // Add formatting
+    $output = preg_replace("/\]\=\>\n(\s+)/m", '] => ', $output);
+    $output = '<pre style="background: #FFFEEF; color: #000; border: 1px dotted #000; padding: 10px; margin: 10px 0; text-align: left;">'.$label.' => '.$output.'</pre>';
 
-        // Output
-        if ($echo == true) {
-            echo $output;
-        } else {
-            return $output;
-        }
+    // Output
+    if ($echo == true) {
+      echo $output;
+    } else {
+      return $output;
     }
+  }
 }
 
 if (!function_exists('dump_exit')) {
-    function dump_exit($var, $label = 'Dump', $echo = true) {
-        dump($var, $label, $echo);
-        exit;
-    }
+  function dump_exit($var, $label = 'Dump', $echo = true) {
+    dump($var, $label, $echo);
+    exit;
+  }
 }

@@ -10,7 +10,7 @@
 .Bxslider-content {
   background-color: rgba($orange, 0.5);
   bottom: 0;
-  @include align-content(end);
+  @include align-content(flex-end);
   @include display-flex();
   @include flex-wrap(wrap);
   left: 0;
@@ -22,6 +22,10 @@
   @include scale(0);
   @include transition(all 0.2s ease-in);
   width: 100%;
+  @media screen and (max-width: 991px) {
+    @include opacity(1);
+    @include scale(1);
+  }
 }
 .Bxslider-title, .Bxslider-text {
   color: white;
@@ -34,4 +38,34 @@
 }
 .Bxslider-text {
   font-size: 0.875em;
+}
+
+.bx-wrapper {
+  border: none;
+  @include box-shadow(none);
+  margin-bottom: 0;
+  .bx-controls-direction {
+    text-align: right;
+    a {
+      color: $text-color;
+      display: inline-block;
+      height: auto;
+      font-size: 2em;
+      margin: 0;
+      padding: 5px;
+      position: relative;
+      text-indent: 0;
+      top: auto;
+      width: auto;
+    }
+  }
+  .bx-prev, .bx-next {
+    background: none;
+    left: auto;
+    right: auto;
+    &:focus, &:hover {
+      background-color: $orange;
+      color: white;
+    }
+  }
 }

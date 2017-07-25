@@ -5,7 +5,8 @@ var j = jQuery.noConflict();
 (function ($) {
   var $win = j(window),
       $doc = j(document),
-      $animationElements = j('.animation-element');
+      $animationElements = j('.animation-element'),
+      sldExpert;
 
   function affixHeader() {
     j('.Header').affix({
@@ -49,6 +50,34 @@ var j = jQuery.noConflict();
 
         map.setCenter({lat: lat, lng: long});
       }
+    }
+
+    if (j('.Bxslider-list').length) {
+      var bx = j('.Bxslider-list'),
+          widthBxSlider = parseInt(bx.width()),
+          widthBxSlider = $win.width() > 600 ? (widthBxSlider * 42) / 100 : 0,
+          slides = $win.width() > 600 ? 3 : 1;
+
+      sldExpert.reloadSlider({
+        auto: true,
+        autoHover: true,
+        minSlides: slides,
+        maxSlides: slides,
+        slideWidth: widthBxSlider,
+        slideMargin: 15,
+        nextText: '<i class="icon-arrow-right2"></i>',
+        prevText: '<i class="icon-arrow-left2"></i>',
+        pager: false,
+        onSliderLoad: function() {
+          j('.bx-controls-direction a').on('click', function(){
+            var i = $(this).attr('data-slide-index');
+              sldExpert.goToSlide(i);
+              sldExpert.stopAuto();
+              sldExpert.startAuto();
+              return false;
+          });
+        }
+      });
     }
   });
 
@@ -150,5 +179,33 @@ var j = jQuery.noConflict();
         slidebar.addClass('active');
       }
     });
+
+    if (j('.Bxslider-list').length) {
+      var bx = j('.Bxslider-list'),
+          widthBxSlider = parseInt(bx.width()),
+          widthBxSlider = $win.width() > 600 ? (widthBxSlider * 42) / 100 : 0,
+          slides = $win.width() > 600 ? 3 : 1;
+
+      sldExpert = j('.bxslider').bxSlider({
+        auto: true,
+        autoHover: true,
+        minSlides: slides,
+        maxSlides: slides,
+        slideWidth: widthBxSlider,
+        slideMargin: 15,
+        nextText: '<i class="icon-arrow-right2"></i>',
+        prevText: '<i class="icon-arrow-left2"></i>',
+        pager: false,
+        onSliderLoad: function() {
+          j('.bx-controls-direction a').on('click', function(){
+            var i = $(this).attr('data-slide-index');
+              sldExpert.goToSlide(i);
+              sldExpert.stopAuto();
+              sldExpert.startAuto();
+              return false;
+          });
+        }
+      });
+    }
   });
 })(jQuery);

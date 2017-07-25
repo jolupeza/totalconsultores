@@ -150,6 +150,84 @@
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>
 
+<?php
+  $args = [
+    'post_type' => 'experts',
+    'posts_per_page' => -1,
+    'orderby' => 'menu_order',
+    'order' => 'ASC',
+  ];
+
+  $the_query = new WP_Query($args);
+
+  if ($the_query->have_posts()) :
+?>
+<section class="Page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h4 class="Page-legend text-uppercase text-right text-title">Nuestros</h4>
+        <h3 class="Page-resalt text-uppercase text-right text-orange">Expertos</h3>
+        <hr class="Page-separator Page-separator--short Page-separator--right Page-separator--orange">
+      </div>
+      <div class="col-md-8">
+        <ul class="bxslider Bxslider-list">
+          <?php while ($the_query->have_posts()) : ?>
+            <?php $the_query->the_post(); ?>
+            <?php if (has_post_thumbnail()) : ?>
+              <li>
+                <figure class="Bxslider-figure">
+                  <?php the_post_thumbnail('full', [
+                      'class' => 'img-responsive center-block',
+                      'alt' => get_the_title()
+                    ]);
+                  ?>
+                  <aside class="Bxslider-content">
+                    <h3 class="Bxslider-title text-center"><?php the_title(); ?></h3>
+                    <div class="Bxslider-text"><?php the_content(); ?></div>
+                  </aside>
+                </figure>
+              </li>
+            <?php endif; ?>
+          <?php endwhile; ?>
+
+          <?php /*
+          <li>
+            <figure class="Bxslider-figure">
+              <img src="<?php echo IMAGES; ?>/experto.jpg" alt="" class="img-responsive center-block">
+              <aside class="Bxslider-content">
+                <h3 class="Bxslider-title text-center">Marco Barriga C.</h3>
+                <p class="Bxslider-text">CEO TotalConsultores</p>
+              </aside>
+            </figure>
+          </li>
+          <li>
+            <figure class="Bxslider-figure">
+              <img src="<?php echo IMAGES; ?>/experto.jpg" alt="" class="img-responsive center-block">
+              <aside class="Bxslider-content">
+                <h3 class="Bxslider-title text-center">Marco Barriga C.</h3>
+                <p class="Bxslider-text">CEO TotalConsultores</p>
+              </aside>
+            </figure>
+          </li>
+          <li>
+            <figure class="Bxslider-figure">
+              <img src="<?php echo IMAGES; ?>/experto.jpg" alt="" class="img-responsive center-block">
+              <aside class="Bxslider-content">
+                <h3 class="Bxslider-title text-center">Marco Barriga C.</h3>
+                <p class="Bxslider-text">CEO TotalConsultores</p>
+              </aside>
+            </figure>
+          </li>
+          */ ?>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
+<?php wp_reset_postdata(); ?>
+
 <!-- Modal Video -->
 <?php
   $options = get_option('tc_custom_settings');

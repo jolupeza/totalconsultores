@@ -1739,8 +1739,8 @@ a:hover, a:focus {
 .Bxslider-content {
   background-color: rgba(255, 96, 67, 0.5);
   bottom: 0;
-  -webkit-align-content: end;
-  align-content: end;
+  -webkit-align-content: flex-end;
+  align-content: flex-end;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-wrap: wrap;
@@ -1762,6 +1762,16 @@ a:hover, a:focus {
   transition: all 0.2s ease-in;
   width: 100%;
 }
+@media screen and (max-width: 991px) {
+  .Bxslider-content {
+    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity: 1;
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
 
 .Bxslider-title, .Bxslider-text {
   color: white;
@@ -1777,4 +1787,36 @@ a:hover, a:focus {
 
 .Bxslider-text {
   font-size: 0.875em;
+}
+
+.bx-wrapper {
+  border: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  margin-bottom: 0;
+}
+.bx-wrapper .bx-controls-direction {
+  text-align: right;
+}
+.bx-wrapper .bx-controls-direction a {
+  color: #1f1f1f;
+  display: inline-block;
+  height: auto;
+  font-size: 2em;
+  margin: 0;
+  padding: 5px;
+  position: relative;
+  text-indent: 0;
+  top: auto;
+  width: auto;
+}
+.bx-wrapper .bx-prev, .bx-wrapper .bx-next {
+  background: none;
+  left: auto;
+  right: auto;
+}
+.bx-wrapper .bx-prev:focus, .bx-wrapper .bx-prev:hover, .bx-wrapper .bx-next:focus, .bx-wrapper .bx-next:hover {
+  background-color: #ff6043;
+  color: white;
 }
