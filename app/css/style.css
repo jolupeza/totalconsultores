@@ -1820,3 +1820,56 @@ a:hover, a:focus {
   background-color: #ff6043;
   color: white;
 }
+
+.Pagination {
+  display: -webkit-flex;
+  display: flex;
+  margin: 20px 0;
+  width: 100%;
+}
+@media screen and (max-width: 991px) {
+  .Pagination {
+    margin-bottom: 50px;
+  }
+}
+.Pagination ul.page-numbers {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-content: center;
+  align-content: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-bottom: 0;
+  padding-left: 0;
+  width: 100%;
+}
+.Pagination ul.page-numbers li {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  list-style: none;
+  margin-right: 10px;
+}
+.Pagination ul.page-numbers li:last-child {
+  margin-right: 0;
+}
+.Pagination ul.page-numbers li a {
+  text-decoration: none;
+}
+.Pagination ul.page-numbers li a.page-numbers:hover, .Pagination ul.page-numbers li a.page-numbers:focus {
+  background-color: #ff6043;
+  color: white;
+}
+.Pagination ul.page-numbers li a, .Pagination ul.page-numbers li span {
+  display: block;
+}
+.Pagination ul.page-numbers li .page-numbers {
+  color: white;
+  background-color: #333333;
+  padding: 5px 8px;
+}
+.Pagination ul.page-numbers li .current {
+  background-color: #ff6043;
+  color: white;
+}

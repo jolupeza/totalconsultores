@@ -77,16 +77,25 @@ if (function_exists('register_sidebar')) {
 }
 
 /****************************************/
+/* Add Excerpt to Page */
+/****************************************/
+function total_add_excerpts_to_pages() {
+  add_post_type_support('page', 'excerpt');
+}
+
+add_action('init', 'total_add_excerpts_to_pages');
+
+/****************************************/
 /* Setting Mailtrap */
 /****************************************/
-// function mailtrap($phpmailer) {
-//   $phpmailer->isSMTP();
-//   $phpmailer->Host = 'smtp.mailtrap.io';
-//   $phpmailer->SMTPAuth = true;
-//   $phpmailer->Port = 2525;
-//   $phpmailer->Username = 'e6e50f29dbe2dd';
-//   $phpmailer->Password = 'f1ea173da928d9';
-// }
+function mailtrap($phpmailer) {
+  $phpmailer->isSMTP();
+  $phpmailer->Host = 'smtp.mailtrap.io';
+  $phpmailer->SMTPAuth = true;
+  $phpmailer->Port = 2525;
+  $phpmailer->Username = 'e6e50f29dbe2dd';
+  $phpmailer->Password = 'f1ea173da928d9';
+}
 
 // add_action('phpmailer_init', 'mailtrap');
 
@@ -230,3 +239,20 @@ if (!function_exists('dump_exit')) {
     exit;
   }
 }
+
+/***************************************************
+function login_errors_message() {
+  return 'Ooooops!';
+}
+add_filter('login_errors', 'login_errors_message');
+
+remove_action('wp_head', 'wp_generator');
+remove_action('wp_head', 'rsd_link');
+remove_action('wp_head', 'wlwmanifest_link');
+remove_action('wp_head', 'index_rel_link');
+remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+remove_action('wp_head', 'start_post_rel_link', 10, 0);
+remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
+
+add_filter('pre_comment_content', 'wp_specialchars');
+/***************************************************/

@@ -26,6 +26,32 @@
           </article>
         <?php endwhile; ?>
       </section>
+
+      <?php
+        global $wp_query;
+        $total = $wp_query->max_num_pages;
+      ?>
+
+      <?php if ($total > 1) : ?>
+        <nav class="Pagination text-center">
+          <?php
+            $current_page = (get_query_var( 'paged' )) ? get_query_var( 'paged' ) : 1;
+            $format = ( get_option('permalink_structure' ) == '/%postname%/') ? 'page/%#%/' : '&paged=%#%';
+
+            echo paginate_links(array(
+              'base'      =>    get_pagenum_link(1) . '%_%',
+              'format'    =>    $format,
+              'current'   =>    $current_page,
+              'prev_next' =>    True,
+              'prev_text' =>    __('&larr;', THEMEDOMAIN),
+              'next_text' =>    __('&rarr;', THEMEDOMAIN),
+              'total'     =>    $total,
+              'mid_size'  =>    4,
+              'type'      =>    'list'
+            ));
+          ?>
+        </nav>
+      <?php endif; ?>
     <?php else : ?>
       <section class="Page-section">
         <div class="alert alert-info" role="alert">

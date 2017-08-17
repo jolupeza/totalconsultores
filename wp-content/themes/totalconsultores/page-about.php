@@ -22,9 +22,17 @@
     <section class="Page Page--borderOrange Page--intro">
       <div class="container">
         <div class="row">
+          <?php
+            $excerpt = get_the_excerpt();
+            $excerptArr = explode('|', $excerpt);
+          ?>
           <div class="col-md-5">
-            <h4 class="Page-legend text-uppercase text-right text-title">Pasión por.</h4>
-            <h3 class="Page-resalt text-uppercase text-right text-orange">Construir</h3>
+            <h4 class="Page-legend text-uppercase text-right text-title">
+              <?php echo count($excerptArr) && array_key_exists(0, $excerptArr) ? $excerptArr[0] : $excerpt; ?>
+            </h4>
+            <h3 class="Page-resalt text-uppercase text-right text-orange">
+              <?php echo count($excerptArr) && array_key_exists(1, $excerptArr) ? $excerptArr[1] : $excerpt; ?>
+            </h3>
             <hr class="Page-separator Page-separator--short Page-separator--right Page-separator--orange">
           </div>
           <div class="col-md-1"></div>

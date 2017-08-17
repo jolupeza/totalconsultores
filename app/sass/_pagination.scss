@@ -1,0 +1,46 @@
+.Pagination {
+  @include display-flex();
+  margin: 20px 0;
+  width: 100%;
+  @media screen and (max-width: 991px) {
+    margin-bottom: 50px;
+  }
+  ul.page-numbers {
+    @include display-flex();
+    @include align-content(center);
+    @include justify-content(center);
+    margin-bottom: 0;
+    padding-left: 0;
+    width: 100%;
+    li {
+      @include display-flex();
+      @include align-items(center);
+      list-style: none;
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
+      a {
+        text-decoration: none;
+        &.page-numbers {
+          &:hover, &:focus {
+            background-color: $orange;
+            color: white;
+          }
+        }
+      }
+      a, span {
+        display: block;
+      }
+      .page-numbers {
+        color: white;
+        background-color: $blackSoft;
+        padding: 5px 8px;
+      }
+      .current {
+        background-color: $orange;
+        color: white;
+      }
+    }
+  }
+}
