@@ -17,6 +17,17 @@
       height: 100px;
     }
   }
+  .checkbox {
+    label {
+      color: white;
+      a {
+        color: $redSoft;
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
 }
 .Form-loader {
   color: white;

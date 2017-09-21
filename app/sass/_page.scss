@@ -356,3 +356,16 @@
     margin-top: 30px;
   }
 }
+
+.Page--default {
+  .Page-title {
+    color: $redSoft;
+    font-size: 2em;
+    margin-bottom: 20px;
+    margin-top: 0;
+  }
+  li {
+    font-family: "montserratlight";
+    margin-bottom: 10px;
+  }
+}

@@ -982,6 +982,17 @@ a:hover, a:focus {
   }
 }
 
+.Page--default .Page-title {
+  color: #fa5151;
+  font-size: 2em;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+.Page--default li {
+  font-family: "montserratlight";
+  margin-bottom: 10px;
+}
+
 .Parallax {
   background-color: transparent;
   background-position: 0 0;
@@ -1116,6 +1127,15 @@ a:hover, a:focus {
 }
 .Form textarea.form-control {
   height: 100px;
+}
+.Form .checkbox label {
+  color: white;
+}
+.Form .checkbox label a {
+  color: #fa5151;
+}
+.Form .checkbox label a:hover {
+  color: #f22424;
 }
 
 .Form-loader {
