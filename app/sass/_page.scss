@@ -75,16 +75,17 @@
 }
 .Page-blog {
   @include display-flex();
+  @include justify-content(space-between);
   margin-top: 25px;
   @media screen and (max-width: 767px) {
     @include flex-wrap(wrap);
   }
 }
 .Page-blog-item {
-  @include flex-basis(33.33%);
-  padding: 0 15px;
+  width: 32%;
   p {
     font-family: "montserratlight";
+    word-break: break-all;
     @media screen and (max-width: 991px) {
       font-size: 0.875em;
     }

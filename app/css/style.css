@@ -617,6 +617,8 @@ a:hover, a:focus {
 .Page-blog {
   display: -webkit-flex;
   display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
   margin-top: 25px;
 }
 @media screen and (max-width: 767px) {
@@ -627,12 +629,11 @@ a:hover, a:focus {
 }
 
 .Page-blog-item {
-  -webkit-flex-basis: 33.33%;
-  flex-basis: 33.33%;
-  padding: 0 15px;
+  width: 32%;
 }
 .Page-blog-item p {
   font-family: "montserratlight";
+  word-break: break-all;
 }
 @media screen and (max-width: 991px) {
   .Page-blog-item p {

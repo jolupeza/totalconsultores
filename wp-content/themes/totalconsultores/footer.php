@@ -32,7 +32,7 @@
           <div class="form-group">
             <div class="checkbox">
               <label>
-                <input type="checkbox" name="contact_terms" required data-fv-notempty-message="Debe aceptar los Términos y Condiciones"> Acepto los <a href="<?php echo home_url('terminos-y-condiciones'); ?>" target="_blank" rel="noopener noreferrer">Términos y Condiciones</a>
+                <input type="checkbox" name="contact_terms" required data-fv-notempty-message="Debe aceptar los Términos y Condiciones"> Acepto las <a href="<?php echo home_url('condiciones-de-tratamiento-para-mis-datos-personales'); ?>" target="_blank" rel="noopener noreferrer">condiciones de tratamiento para mis datos personales.</a>
               </label>
             </div>
           </div>
