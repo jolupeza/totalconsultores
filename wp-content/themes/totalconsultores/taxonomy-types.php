@@ -16,14 +16,15 @@
   </div>
 </section>
 
-<section class="Page">
+<section class="Page" id="content">
   <div class="container">
     <?php
       $args = [
         'theme_location' => 'project-menu',
         'container' => 'nav',
         'container_class' => 'Page-nav',
-        'menu_class' => 'Page-nav-list'
+        'menu_class' => 'Page-nav-list',
+        'walker' => new Total_Walker_Nav_Menu_Hashtag()
       ];
 
       wp_nav_menu($args);

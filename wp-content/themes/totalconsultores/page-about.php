@@ -59,7 +59,7 @@
           <article class="Page-section">
             <h3 class="text-center Page-subtitle">nuestros clientes</h3>
 
-            <ul class="Page-list Page-list--flex">
+            <ul class="bxslider Bxslider-customer">
               <?php while ($the_query->have_posts()) : ?>
                 <?php $the_query->the_post(); ?>
                 <?php
@@ -198,36 +198,6 @@
               </li>
             <?php endif; ?>
           <?php endwhile; ?>
-
-          <?php /*
-          <li>
-            <figure class="Bxslider-figure">
-              <img src="<?php echo IMAGES; ?>/experto.jpg" alt="" class="img-responsive center-block">
-              <aside class="Bxslider-content">
-                <h3 class="Bxslider-title text-center">Marco Barriga C.</h3>
-                <p class="Bxslider-text">CEO TotalConsultores</p>
-              </aside>
-            </figure>
-          </li>
-          <li>
-            <figure class="Bxslider-figure">
-              <img src="<?php echo IMAGES; ?>/experto.jpg" alt="" class="img-responsive center-block">
-              <aside class="Bxslider-content">
-                <h3 class="Bxslider-title text-center">Marco Barriga C.</h3>
-                <p class="Bxslider-text">CEO TotalConsultores</p>
-              </aside>
-            </figure>
-          </li>
-          <li>
-            <figure class="Bxslider-figure">
-              <img src="<?php echo IMAGES; ?>/experto.jpg" alt="" class="img-responsive center-block">
-              <aside class="Bxslider-content">
-                <h3 class="Bxslider-title text-center">Marco Barriga C.</h3>
-                <p class="Bxslider-text">CEO TotalConsultores</p>
-              </aside>
-            </figure>
-          </li>
-          */ ?>
         </ul>
       </div>
     </div>

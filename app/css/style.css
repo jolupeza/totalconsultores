@@ -537,7 +537,8 @@ a:hover, a:focus {
   }
 }
 .Page--intro {
-  padding-top: 200px;
+  padding-bottom: 50px;
+  padding-top: 150px;
 }
 @media screen and (max-width: 991px) {
   .Page--intro p {

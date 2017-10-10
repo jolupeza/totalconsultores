@@ -6,7 +6,7 @@ var j = jQuery.noConflict();
   var $win = j(window),
       $doc = j(document),
       $animationElements = j('.animation-element'),
-      sldExpert;
+      sldExpert, sldCustomer;
 
   function affixHeader() {
     j('.Header').affix({
@@ -89,6 +89,38 @@ var j = jQuery.noConflict();
               return false;
           });
         }*/
+      });
+    }
+
+    if (j('.Bxslider-customer').length) {
+      var bx = j('.Bxslider-customer'),
+          widthBxSlider = parseInt(bx.width()),
+          widthBxSlider = $win.width() > 600 ? (widthBxSlider * 42) / 100 : 0,
+          slides = $win.width() > 600 ? 5 : 1;
+
+      sldCustomer.reloadSlider({
+        auto: true,
+        autoHover: true,
+        minSlides: slides,
+        maxSlides: slides,
+        slideWidth: widthBxSlider,
+        moveSlides: 1,
+        slideMargin: 15,
+        nextText: '<i class="icon-arrow-right2"></i>',
+        prevText: '<i class="icon-arrow-left2"></i>',
+        pager: false,
+        onSlidePrev: function($slideElement, oldIndex, newIndex) {
+          sldCustomer.goToSlide(newIndex);
+          sldCustomer.stopAuto();
+          sldCustomer.startAuto();
+          return false;
+        },
+        onSlideNext: function($slideElement, oldIndex, newIndex) {
+          sldCustomer.goToSlide(newIndex);
+          sldCustomer.stopAuto();
+          sldCustomer.startAuto();
+          return false;
+        }
       });
     }
   });
@@ -192,13 +224,44 @@ var j = jQuery.noConflict();
       }
     });
 
+    if (j('.Bxslider-customer').length) {
+      var bx = j('.Bxslider-customer'),
+          widthBxSlider = parseInt(bx.width()),
+          widthBxSlider = $win.width() > 600 ? (widthBxSlider * 42) / 100 : 0,
+          slides = $win.width() > 600 ? 5 : 1;
+
+      sldCustomer = bx.bxSlider({
+        auto: true,
+        autoHover: true,
+        minSlides: slides,
+        maxSlides: slides,
+        slideWidth: widthBxSlider,
+        moveSlides: 1,
+        nextText: '<i class="icon-arrow-right2"></i>',
+        prevText: '<i class="icon-arrow-left2"></i>',
+        pager: false,
+        onSlidePrev: function($slideElement, oldIndex, newIndex) {
+          sldCustomer.goToSlide(newIndex);
+          sldCustomer.stopAuto();
+          sldCustomer.startAuto();
+          return false;
+        },
+        onSlideNext: function($slideElement, oldIndex, newIndex) {
+          sldCustomer.goToSlide(newIndex);
+          sldCustomer.stopAuto();
+          sldCustomer.startAuto();
+          return false;
+        }
+      });
+    }
+
     if (j('.Bxslider-list').length) {
       var bx = j('.Bxslider-list'),
           widthBxSlider = parseInt(bx.width()),
           widthBxSlider = $win.width() > 600 ? (widthBxSlider * 42) / 100 : 0,
           slides = $win.width() > 600 ? 3 : 1;
 
-      sldExpert = j('.bxslider').bxSlider({
+      sldExpert = bx.bxSlider({
         auto: true,
         autoHover: true,
         minSlides: slides,
