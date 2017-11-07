@@ -15,7 +15,7 @@
 
         <p class="text-white text-center" id="js-form-contact-msg"></p>
 
-        <form class="Form" action="" method="POST" id="js-frm-contact">
+        <form class="Form" method="POST" id="js-frm-contact">
           <div class="form-group">
             <label for="contact_name" class="sr-only">Nombre</label>
             <input type="text" class="form-control" name="contact_name" id="contact_name" placeholder="Nombre" autocomplete="off" required>
@@ -67,14 +67,14 @@
           </div>
           <div class="col-md-4 hidden-sm hidden-xs"></div>
           <div class="col-md-4 col-sm-4">
-            <article class="Footer-info">
+            <aside class="Footer-info">
               <?php if (!empty($options['phone'])) : ?>
                 <p class="Footer-text text-right"><?php echo $options['phone']; ?></p>
               <?php endif; ?>
               <?php if (!empty($options['email'])) : ?>
                 <p class="Footer-text text-right"><?php echo $options['email']; ?></p>
               <?php endif; ?>
-            </article>
+            </aside>
           </div>
         </div>
 

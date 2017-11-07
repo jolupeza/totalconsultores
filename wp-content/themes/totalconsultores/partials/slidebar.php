@@ -1,11 +1,11 @@
 <?php $options = get_option('tc_custom_settings'); ?>
 
-<section class="Slidebar">
+<aside class="Slidebar">
   <aside class="Slidebar-close">
     <i class="icon-close js-toggle-slidebar"></i>
   </aside>
 
-  <article class="Slidebar-content">
+  <div class="Slidebar-content">
     <?php
       $args = [
         'theme_location' => 'main-menu',
@@ -17,7 +17,7 @@
       wp_nav_menu($args);
     ?>
 
-    <article class="Slidebar-info">
+    <div class="Slidebar-info">
       <?php if (!empty($options['phone'])) : ?>
         <p class="Slidebar-text text-center"><?php echo $options['phone']; ?></p>
       <?php endif; ?>
@@ -25,7 +25,7 @@
       <?php if (!empty($options['email'])) : ?>
         <p class="Slidebar-text text-center"><?php echo $options['email']; ?></p>
       <?php endif; ?>
-    </article>
+    </div>
 
     <?php if ($options['display_social_link'] && !is_null($options['display_social_link'])) : ?>
       <ul class="Slidebar-social">
@@ -46,5 +46,5 @@
         <?php endif; ?>
       </ul>
     <?php endif; ?>
-  </article>
-</section>
+  </div>
+</aside>

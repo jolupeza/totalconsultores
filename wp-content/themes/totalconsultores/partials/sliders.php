@@ -31,7 +31,7 @@
           <?php if (has_post_thumbnail()) : ?>
             <picture>
               <?php if (!empty($responsive)) : ?>
-                <source class="img-responsive center-block" media="(max-width: 767px) and (orientation: portrait)" srcset="<?php echo $responsive; ?>" alt="<?php echo get_the_title(); ?>" />
+                <source class="img-responsive center-block" media="(max-width: 767px) and (orientation: portrait)" srcset="<?php echo $responsive; ?>" />
               <?php endif; ?>
               <?php
                 the_post_thumbnail('full', [
